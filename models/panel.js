@@ -22,14 +22,25 @@ module.exports = function (sequelize, DataTypes) {
         process1M2: {
             type: DataTypes.FLOAT
         },
+        process1Zone: {
+            type: DataTypes.INTEGER
+        },
+        process1PuckNum: {
+            type: DataTypes.INTEGER,
+            unique: true,
+        },
         process2M1: {
             type: DataTypes.FLOAT
         },
         process2M2: {
             type: DataTypes.FLOAT
         },
-        puckNumber: {
+        process2Zone: {
             type: DataTypes.INTEGER
+        },
+        process2PuckNum: {
+            type: DataTypes.INTEGER,
+            unique: true,
         },
         panelNumberX: {
             type: DataTypes.INTEGER
@@ -41,7 +52,7 @@ module.exports = function (sequelize, DataTypes) {
 
     // One to many association of panels if we stretch
 
-    // Panel.associate = () => {
+    // Panel.associate = () => { 
     //     Panel.hasMany(models.panelModel, {
     //         onDelete: "cascade"
     //     });
