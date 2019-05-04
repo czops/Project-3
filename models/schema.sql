@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS panel_db;
-CREATE DATABASE panel_db;
