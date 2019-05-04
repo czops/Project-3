@@ -1,20 +1,20 @@
 require("dotenv").config();
-const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 3000;
-const app = express();
+var express = require("express");
 
-var db = require("./models")
+var db = require("./models");
 
-app.use(express.urlencoded({
-    extended: false
-}));
+var app = express();
+var PORT = process.env.PORT || 3000;
 
+// Middleware
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
-app.use(express.static("public"));
-
-require("./routes/apiRoutes")(app)
+// Routes
+require("./routes/apiRoutes")(app);
 
 var syncOptions = { force: false };
 
@@ -33,6 +33,16 @@ db.sequelize.sync(syncOptions).then(function () {
             PORT
         );
     });
+});
+
+// Send every other request to the React app
+// Define any API routes before this runs
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+app.listen(PORT, () => {
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
 
 module.exports = app;
