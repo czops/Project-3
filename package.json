@@ -1,7 +1,7 @@
 {
-  "name": "mern",
-  "version": "1.0.0",
-  "description": "Mern Demo",
+  "name": "datalogger",
+  "version": "0.1.0",
+  "description": "App to optimize workflow for logging industrial measurements",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -19,7 +19,11 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "express": "^4.16.3",
-    "if-env": "^1.0.4"
+    "bootstrap": "^4.3.1",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mysql2": "^1.6.5",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "sequelize": "^5.8.4"
   }
 }
