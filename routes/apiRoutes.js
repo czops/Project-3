@@ -42,17 +42,18 @@ module.exports = function (app) {
     //==================================================================================
 
     app.put("/api/processOne/:shopOrder"), (req, res) => { //update shopOrder with Process 1 measurements
+        console.log(req)
         db.Panel.update({
-            process1M1: req.body.process1M1,
-            process1M2: req.body.process1M2,
+            process1M1: parseFloat(req.body.process1M1),
+            process1M2: parseFloat(req.body.process1M2),
             process1Zone: req.body.process1Zone
         }, {
                 where: {
-                    shopOrder: req.params.shopOrder
+                    shopOrder: req.body.shopOrder
                 }
             }).then((data) => {
                 res.json(data)
-            })
+            });
     };
 
     app.put("/api/processTwo"), (req, res) => { //update shopOrder with Process 1 measurements
