@@ -40,7 +40,7 @@ module.exports = function (app) {
     //===                             PUT ROUTES                                     ===                   
     //==================================================================================
 
-    app.put("/api/processOne/:shopOrder", (req, res) => { //update shopOrder with Process 1 measurements
+    app.put("/api/processOne/", (req, res) => { //update shopOrder with Process 1 measurements
         console.log(req)
         db.Panel.update({
             process1M1: parseFloat(req.body.process1M1),
@@ -48,7 +48,7 @@ module.exports = function (app) {
             process1Zone: req.body.process1Zone
         }, {
                 where: {
-                    shopOrder: req.params.shopOrder
+                    shopOrder: req.body.shopOrder
                 }
             }).then((data) => {
                 res.json(data)
