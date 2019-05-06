@@ -5,9 +5,8 @@ module.exports = function (app) {
     //==================================================================================
     //===                             GET ROUTES                                     ===                   
     //==================================================================================
-    app.get("/api/shopNumber", (req, res) => {
+    app.get("/api/allPanels", (req, res) => { //get all panels
         db.Panel.findAll({
-            include: [db.Puck]
         }).then(
             (data) => {
                 res.json(data)
@@ -41,7 +40,7 @@ module.exports = function (app) {
     //===                             PUT ROUTES                                     ===                   
     //==================================================================================
 
-    app.put("/api/processOne/:shopOrder"), (req, res) => { //update shopOrder with Process 1 measurements
+    app.put("/api/processOne/:shopOrder", (req, res) => { //update shopOrder with Process 1 measurements
         console.log(req)
         db.Panel.update({
             process1M1: parseFloat(req.body.process1M1),
@@ -49,14 +48,15 @@ module.exports = function (app) {
             process1Zone: req.body.process1Zone
         }, {
                 where: {
-                    shopOrder: req.body.shopOrder
+                    shopOrder: req.params.shopOrder
                 }
             }).then((data) => {
                 res.json(data)
             });
-    };
+    });
 
-    app.put("/api/processTwo"), (req, res) => { //update shopOrder with Process 1 measurements
+    app.put("/api/processTwo", (req, res) => { //update shopOrder with Process 2 measurements
+        console.log(req.body);
         db.Panel.update({
             process2M1: req.body.process2M1,
             process2M2: req.body.process2M2,
@@ -68,6 +68,8 @@ module.exports = function (app) {
             }).then((data) => {
                 res.json(data)
             })
-    };
+    });
+
+
 
 } // module export close

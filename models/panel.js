@@ -3,14 +3,11 @@ module.exports = function (sequelize, DataTypes) {
     const Panel = sequelize.define("Panel", {
         shopOrder: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            unique: true
+            allowNull: false
         },
         modelNum: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
         },
         panelSizeX: {
             type: DataTypes.INTEGER
