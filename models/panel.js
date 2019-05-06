@@ -1,13 +1,12 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Panel = sequelize.define("Panel", {
-        model: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-        },
         shopOrder: {
             type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        modelNum: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         panelSizeX: {
@@ -48,19 +47,7 @@ module.exports = function (sequelize, DataTypes) {
         panelNumberY: {
             type: DataTypes.INTEGER
         }
-    })
-
-    // One to many association of panels if we stretch
-
-    // Panel.associate = () => { 
-    //     Panel.hasMany(models.panelModel, {
-    //         onDelete: "cascade"
-    //     });
-
-    //     Panel.hasMany(models.shopOrder, {
-    //         onDelete: "cascade"
-    //     })
-    // }
+    });
 
     return Panel;
-}
+};
