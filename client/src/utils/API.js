@@ -1,22 +1,47 @@
-//this is copy pasta from React router
-
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  //===============================
+  //==      GET ROUTES           ==
+  //===============================
+
+  // Gets all panels from DB
+  getAllPanels: function () {
+    return axios.get("/api/allPanels");
   },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+
+  //===============================
+  //==      POST ROUTES          ==
+  //===============================
+
+  // Create a new panel. panelInfo will have to include:
+  // shopOrder / modelNum / panelSizeX / panelSizeY
+  saveNewPanel: function (panelInfo) {
+    return axios.post("/api/newPanel/" + panelInfo);
   },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+
+  // Create a new puck, returns puckNum expects:
+  // shopOrder to ensure association
+  newPuck: function (shopOrder) {
+    return axios.post("/api/newPuck/" + shopOrder);
   },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
-  }
+
+
+
+  //===============================
+  //==      PUT ROUTES           ==
+  //===============================
+
+  //Update measurements as a part of process one. Expects:
+  //process1M1 / process1M2 / process1Zone / process1PuckNum / shopOrder
+  processOne: function (processOne) {
+    return axios.put("/api/processOne" + processOne);
+  },
+
+  //Update measurements as a part of process one. Expects:
+  //process2M1 / process2M2 / process2Zone / process1PuckNum / shopOrder
+  processTwo: function (processTwo) {
+    return axios.put("/api/processOne" + processTwo);
+  },
+
 };
