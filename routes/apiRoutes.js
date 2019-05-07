@@ -45,7 +45,8 @@ module.exports = function (app) {
         db.Panel.update({
             process1M1: parseFloat(req.body.process1M1),
             process1M2: parseFloat(req.body.process1M2),
-            process1Zone: req.body.process1Zone
+            process1Zone: req.body.process1Zone,
+            process1PuckNum: req.body.process1PuckNum
         }, {
                 where: {
                     shopOrder: req.body.shopOrder
@@ -60,7 +61,8 @@ module.exports = function (app) {
         db.Panel.update({
             process2M1: req.body.process2M1,
             process2M2: req.body.process2M2,
-            process2Zone: req.body.process2Zone
+            process2Zone: req.body.process2Zone,
+            process2PuckNum: req.body.process2PuckNum
         }, {
                 where: {
                     shopOrder: req.body.shopOrder
@@ -69,7 +71,5 @@ module.exports = function (app) {
                 res.json(data)
             })
     });
-
-
 
 } // module export close
