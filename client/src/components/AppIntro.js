@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
+//these all need routing co
 import Login from "./components/Login";
 import ProcessSelection from "./components/ProcessSelection";
 import Process1DataEntry from "./components/Process1DataEntry";
-// import Process2 from "./components/Process2";
+import Process2DataEntry from "./components/Process2DataEntry";
 import Measurements from "./components/Measurements";
 import SuccessScreen from "./components/SuccessScreen";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
+// Navbar should just be imported on each applicable page
+//import Navbar from "./components/Navbar";
+
 
 class AppIntro extends Component {
     state = {
@@ -28,11 +28,13 @@ class AppIntro extends Component {
             return <ProcessSelection />;
         } else if (this.state.currentPage === "Process1DataEntry") {
             return <Process1DataEntry />;
+        } else if (this.state.currentPage === "Process2DataEntry") {
+            return <Process2DataEntry />;
         } else if (this.state.currentPage === "Measurements") {
             return <Measurements />;
         } else (this.state.currentPage === "SuccessScreen") {
             return <SuccessScreen />;
-        } 
+        }
         // else {
         //     return <fourOFour />;
         // }
