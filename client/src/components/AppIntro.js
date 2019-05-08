@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Login from "./components/Login";
 import ProcessSelection from "./components/ProcessSelection";
 import Process1DataEntry from "./components/Process1DataEntry";
-// import Process2 from "./components/Process2";
+// import Process2DataEntry from "./components/Process2DataEntry";
 import Measurements from "./components/Measurements";
 import SuccessScreen from "./components/SuccessScreen";
 
@@ -29,10 +29,10 @@ class AppIntro extends Component {
         } else if (this.state.currentPage === "Process1DataEntry") {
             return <Process1DataEntry />;
         } else if (this.state.currentPage === "Measurements") {
-            return <Measurements />;
-        } else (this.state.currentPage === "SuccessScreen") {
+            return <Measurements />
+        } else /*(this.state.currentPage === "SuccessScreen")*/ {
             return <SuccessScreen />;
-        } 
+        }
         // else {
         //     return <fourOFour />;
         // }
@@ -41,10 +41,10 @@ class AppIntro extends Component {
     render() {
         return (
             <div>
-                <NavTabs
+                {/* <NavTabs
                     currentPage={this.state.currentPage}
                     handlePageChange={this.handlePageChange}
-                />
+                /> */}
                 {this.renderPage()}
             </div>
         );

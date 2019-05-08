@@ -1,9 +1,9 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Books from "./pages/Books";
-// import Detail from "./pages/Detail";
-import NotFound from "./pages/NotFound";
+// import AppIntro from "./components/AppIntro";
+import Login from "./pages/Login/Login"
 import NavbarComponent from "./components/navbar/Navbar";
+import NotFound from "./pages/NotFound/NotFound";
+import React from "react";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <div>
         <NavbarComponent />
         <Switch>
-          {/* <Route exact path="/" component={Books} />
-          <Route exact path="/books" component={Books} />
+          <Route exact path="/" component={Login} />
+          {/* <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} /> */}
           <Route component={NotFound} />
         </Switch>
