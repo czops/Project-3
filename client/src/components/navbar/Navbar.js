@@ -1,16 +1,18 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar"
+import Navbar from "react-bootstrap/Navbar";
+import "../navbar/Navbar.css";
+import ciruitLogo from "../navbar/logo.png";
 
 function NavbarComponent() {
     return (
-        <Navbar bg="dark">
+        <Navbar className="navbarBig">
             <Navbar.Brand>
                 <img
-                    src="./logo.png"
+                    src="/logo.svg"
                     width="30"
                     height="30"
                     className="d-inline-block align-top"
-                    alt="Circuit Ninja logo"
+                    alt="Circuit Ninjas"
                 />
             </Navbar.Brand>
         </Navbar>
