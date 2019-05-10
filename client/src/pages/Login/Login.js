@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import NavbarComponent from "../../components/navbar/Navbar";
 import { Col, Row, Container } from "react-bootstrap";
+import LoginComponent from "./LoginCard";
+import "../Login/Login.css";
 
 class Login extends Component {
     state = {
@@ -13,10 +14,10 @@ class Login extends Component {
 
     render() {
         return (
-            <Container>
-                <Row>
+            <Container className="mainBox">
+                <Row className="loginBox">
                     <Col>
-                        <h1>Login Page</h1>
+                        <LoginComponent />
                     </Col>
                 </Row>
             </Container>

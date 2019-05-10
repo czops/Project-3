@@ -1,0 +1,11 @@
+.mainBox {
+    margin: auto;
+}
+
+.loginBox {
+    background-color: blue;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+}

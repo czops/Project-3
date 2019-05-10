@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import AppIntro from "./components/AppIntro";
 import Login from "./pages/Login/Login";
+import Landing from "./pages/LandingPage/Landing";
 import Measurements from "./pages/Measurements/Measurements"
 import NavbarComponent from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound/NotFound";
@@ -34,6 +35,7 @@ render(){
         <Switch>
           <Route exact path="/" component={Login} />
           {/* <Route exact path="/LandingPage" render={(state) => <LandingPage {...state}/>} /> */}
+          <Route exact path="/Landing" component={Landing} />
           <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
           <Route exact path="/Process1" component={Process1} />
           <Route exact path="/Process2" component={Process2} />
