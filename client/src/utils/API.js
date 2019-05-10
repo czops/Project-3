@@ -35,13 +35,13 @@ export default {
     //Update measurements as a part of process one. Expects:
     //process1M1 / process1M2 / process1Zone / process1PuckNum / shopOrder
     processOne: function (processOne) {
-        return axios.put("/api/processOne" + processOne);
+        return axios.put("/api/processOne", processOne);
     },
 
     //Update measurements as a part of process one. Expects:
     //process2M1 / process2M2 / process2Zone / process1PuckNum / shopOrder
     processTwo: function (processTwo) {
-        return axios.put("/api/processOne" + processTwo);
+        return axios.put("/api/processOne", processTwo);
     },
 
 };

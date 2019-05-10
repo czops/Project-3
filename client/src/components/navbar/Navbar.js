@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import "../navbar/Navbar.css";
+import "../navbar/navbar.css";
 import ciruitLogo from "../navbar/logo.png";
 
 function NavbarComponent() {
