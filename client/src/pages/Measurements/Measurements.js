@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
-
+import NavbarComponent from "../../components/navbar/Navbar";
 
 class Measurements extends Component {
 
@@ -12,6 +12,8 @@ class Measurements extends Component {
 
     render() {
         return (
+            <div>
+            <NavbarComponent />
             <Container>
 
                 <Row>
@@ -25,8 +27,11 @@ class Measurements extends Component {
 
                 </Row>
             </Container>
+            </div>
         )
     }
 };
 
 export default Measurements;
+
+
