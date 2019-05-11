@@ -1,8 +1,17 @@
-// import React, { Component } from "react";
-import React from "react";
-import { Button, Col, Row, Container } from "react-bootstrap";
-import NavbarComponent from "../../components/navbar/Navbar";
-// import API from "../../utils/API";
+import React, { Component } from "react";
+import { Col, Row, Container } from "react-bootstrap";
+import connectImage from "../LandingPage/connectwork.png";
+import API from "../../utils/API";
+import DataEntryComponent from "../../components/DataEntry1/DataEntry1";
+import Navbar from "../../components/navbar/Navbar";
+import "../Process1/Process1.css";
+
+var backgroundStyle = {
+    backgroundImage: `url(${connectImage})`,
+    resizeMode: "stretch",
+    width: null,
+    height: null
+}
 
 function Process1(props) {
 
@@ -49,47 +58,79 @@ function Process1(props) {
 
     //render() {
         return (
-            <div>
-                <NavbarComponent />
-            
-            <Container>
-                <Row>
-                    <Col>
-                        <h1>Process 1</h1>
-                        <form>
-                            <Container>
-                                <Row>
-                                    <Col>
+            <div style={backgroundStyle}>
+                <Navbar />
+                <Container>
+                    <Row>
+                        <Col>
+                            <DataEntryComponent />
+                        </Col>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h1>Process 1</h1>
+                            <form>
+                                <Container>
+                                    <Row>
+                                        <Col>
 
-                                        <input
-                                            name="process1M1"
-                                            value={props.masterState.process1M1}
-                                            onChange={(event) => props.handleInputChange(event)}
-                                            placeholder="0.00"
-                                        />
-                                        <p>Process 1 Measurement 1</p>
-                                        <br />
+                                            <input
+                                                name="process1M1"
+                                                value={props.masterState.process1M1}
+                                                onChange={(event) => props.handleInputChange(event)}
+                                                placeholder="0.00"
+                                            />
+                                            <p>Process 1 Measurement 1</p>
+                                            <br />
 
-                                        <input
-                                            name="process1M2"
-                                            value={props.masterState.process1M2}
-                                            onChange={(event) => props.handleInputChange(event)}
-                                            placeholder="0.00"
-                                        />
-                                        <p>Process 1 Measurement 2</p>
-                                    </Col>
-                                </Row>
-                                <Button onClick={props.PUTsomeStuff}>
-                                    Do Stuff!
-                                </Button>
-                            </Container>
-                        </form>
-                    </Col>
-                </Row>
-            </Container>
+                                            <input
+                                                name="process1M2"
+                                                value={props.masterState.process1M2}
+                                                onChange={(event) => props.handleInputChange(event)}
+                                                placeholder="0.00"
+                                            />
+                                            <p>Process 1 Measurement 2</p>
+                                        </Col>
+                                    </Row>
+                                    <Button onClick={props.PUTsomeStuff}>
+                                        Do Stuff!
+                                    </Button>
+                                </Container>
+                            </form>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         )
-    //}
 };
 
 export default Process1;
+
+{/* <Container>
+    <Row>
+        <Col>
+
+            <input
+                name="process1M1"
+                value={this.state.process1M1}
+                onChange={this.handleInputChange}
+                placeholder="0.00"
+            />
+            <p>Process 1 Measurement 1</p>
+            <br />
+
+            <input
+                name="process1M2"
+                value={this.state.process1M2}
+                onChange={this.handleInputChange}
+                placeholder="0.00"
+            />
+            <p>Process 1 Measurement 2</p>
+        </Col>
+    </Row>
+    <Button onClick={this.PUTsomeStuff}>
+        Do Stuff!
+    </Button>
+</Container> */}
