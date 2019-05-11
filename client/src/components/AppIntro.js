@@ -1,18 +1,18 @@
 import React, { Component } from "react";
+// import React from "react";
 
-import Login from "./components/Login";
-import ProcessSelection from "./components/ProcessSelection";
-import Process1DataEntry from "./components/Process1DataEntry";
-// import Process2DataEntry from "./components/Process2DataEntry";
-import Measurements from "./components/Measurements";
-import SuccessScreen from "./components/SuccessScreen";
-
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
+import Login from "../pages/Login/Login";
+import Measurements from "../pages/Measurements/Measurements";
+import NavbarComponent from "../components/navbar/Navbar";
+// import LandingPage from "../pages/LandingPage";
+import NotFound from "../pages/NotFound/NotFound";
+import Process1 from "../pages/Process1/Process1";
+import Process2 from "../pages/Process2/Process2";
+import Success from "../pages/Success/Success";
 
 class AppIntro extends Component {
+    
+
     state = {
         currentPage: "Login"
     };
@@ -24,18 +24,22 @@ class AppIntro extends Component {
     renderPage = () => {
         if (this.state.currentPage === "Login") {
             return <Login />;
-        } else if (this.state.currentPage === "ProcessSelection") {
-            return <ProcessSelection />;
-        } else if (this.state.currentPage === "Process1DataEntry") {
-            return <Process1DataEntry />;
+        // } else if (this.state.currentPage === "LandingPage") {
+        //     return <LandingPage />;
+        } else if (this.state.currentPage === "Measurements") {
+            return <Measurements />;
+            // } else if (this.state.currentPage === "Process1") {
+            //     return <Process1 />;
+            // } else if (this.state.currentPage === "Process2") {
+            //     return <Process2 />;
         } else if (this.state.currentPage === "Measurements") {
             return <Measurements />
-        } else /*(this.state.currentPage === "SuccessScreen")*/ {
-            return <SuccessScreen />;
-        }
-        // else {
-        //     return <fourOFour />;
-        // }
+        } else if (this.state.currentPage === "Success") {
+            return <Success />;
+        } else {
+            return <NotFound />;
+        };
+       
     };
 
     render() {
@@ -45,6 +49,7 @@ class AppIntro extends Component {
                     currentPage={this.state.currentPage}
                     handlePageChange={this.handlePageChange}
                 /> */}
+                <NavbarComponent />
                 {this.renderPage()}
             </div>
         );
