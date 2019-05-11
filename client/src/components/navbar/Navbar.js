@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import "../navbar/Navbar.css";
-import ciruitLogo from "../navbar/logo.png";
+import "../navbar/navbar.css";
+//import ciruitLogo from "./navbar/logo.png";
 
 function NavbarComponent() {
     return (
         <Navbar className="navbarBig">
             <Navbar.Brand>
                 <img
-                    src="/logo.svg"
+                    src="./logo.png"
                     width="30"
                     height="30"
                     className="d-inline-block align-top"

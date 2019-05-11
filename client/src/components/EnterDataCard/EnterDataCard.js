@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../EnterDataCard/EnterDataCard.css";
 
-function EnterDataComponent () {
+function EnterDataComponent() {
     return (
         <Form className="formBackground">
             <Form.Text className="titleText">
@@ -12,15 +12,19 @@ function EnterDataComponent () {
             <Form.Text className="infoText">
                 Please enter the number of Panels in the order start the data enter process.
             </Form.Text>
-            
+
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Total number of Panels</Form.Label>
                 <Form.Control type="number" placeholder="#" />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="buttonStandard">
+            <Button variant="primary" type="submit" className="buttonStandard" >
                 START
             </Button>
+            <button onClick={() => {
+                this.props.setMasterState('panels', true);
+            }}>test</button>
+
         </Form>
     )
 };
