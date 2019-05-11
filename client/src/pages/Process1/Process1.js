@@ -13,67 +13,97 @@ var backgroundStyle = {
     height: null
 }
 
-class Process1 extends Component {
-    state = {
-        process1M1: "",
-        process1M2: "",
-        shopOrder: 8685231
-    }
+function Process1(props) {
 
-    componentDidMount() {
-        API.getAllPanels() //get all panels on page load and log to client console
-            .then((res) => {
-                console.log(res.data)
-            });
-        let shopOrder = this.state.shopOrder;
-        API.getOnePanel(shopOrder)
-            .then((panel) => {
-                console.log("panel----------------------------")
-                console.log(panel)
-            })
-    };
+    console.log(props);
+    // state = {
+    //     process1M1: "",
+    //     process1M2: "",
+    //     shopOrder: 8685231
+    // }
 
-    handleInputChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
+    // componentDidMount() {
+    //     API.getAllPanels() //get all panels on page load and log to client console
+    //         .then((res) => {
+    //             console.log(res.data)
+    //         });
+    //     let shopOrder = this.state.shopOrder;
+    //     API.getOnePanel(shopOrder)
+    //         .then((panel) => {
+    //             console.log("panel----------------------------")
+    //             console.log(panel)
+    //         })
+    // };
 
-    PUTsomeStuff = () => {
-        let Process1 = {
-            process1M1: this.state.process1M1,
-            process1M2: this.state.process1M2,
-            shopOrder: this.state.shopOrder
-        }
-        console.log(Process1);
+    // handleInputChange = (event) => {
+    //     const { name, value } = event.target;
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
 
-        API.processTwo(Process1)
-            .then((res) => {
-                console.log(res)
-            })
-    }
-    render() {
+    // PUTsomeStuff = () => {
+    //     let Process1 = {
+    //         process1M1: this.state.process1M1,
+    //         process1M2: this.state.process1M2,
+    //         shopOrder: this.state.shopOrder
+    //     }
+    //     console.log(Process1);
+
+    //     API.processTwo(Process1)
+    //         .then((res) => {
+    //             console.log(res)
+    //         })
+    // }
+
+    //render() {
         return (
             <div style={backgroundStyle}>
-            <Navbar />
-            <Container>
-                <Row>
-                    <Col>
-                        <DataEntryComponent />
-                    </Col>
-                </Row>
-            </Container>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-        </div>
+                <Navbar />
+                <Container>
+                    <Row>
+                        <Col>
+                            <DataEntryComponent />
+                        </Col>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h1>Process 1</h1>
+                            <form>
+                                <Container>
+                                    <Row>
+                                        <Col>
+
+                                            <input
+                                                name="process1M1"
+                                                value={props.masterState.process1M1}
+                                                onChange={(event) => props.handleInputChange(event)}
+                                                placeholder="0.00"
+                                            />
+                                            <p>Process 1 Measurement 1</p>
+                                            <br />
+
+                                            <input
+                                                name="process1M2"
+                                                value={props.masterState.process1M2}
+                                                onChange={(event) => props.handleInputChange(event)}
+                                                placeholder="0.00"
+                                            />
+                                            <p>Process 1 Measurement 2</p>
+                                        </Col>
+                                    </Row>
+                                    <Button onClick={props.PUTsomeStuff}>
+                                        Do Stuff!
+                                    </Button>
+                                </Container>
+                            </form>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
-    }
 };
 
 export default Process1;
