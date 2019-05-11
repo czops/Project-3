@@ -1,11 +1,17 @@
 .mainBox {
-    margin: auto;
+    padding-top: 300px;
+    padding-bottom: 500px;
 }
 
 .loginBox {
-    background-color: blue;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 40px;
     border-radius: 5px;
-    width: 50%;
+    width: 40%;
     margin: auto;
+}
+
+.logo {
+    padding-top: 40px;
+    padding-bottom: 40px;
 }

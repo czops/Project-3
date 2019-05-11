@@ -8,9 +8,9 @@ function NavbarComponent() {
         <Navbar className="navbarBig">
             <Navbar.Brand>
                 <img
-                    src="./logo.png"
-                    width="30"
-                    height="30"
+                    src="./images/logo.png"
+                    width="230"
+                    height="auto"
                     className="d-inline-block align-top"
                     alt="Circuit Ninjas"
                 />

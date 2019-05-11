@@ -13,6 +13,18 @@ module.exports = function (app) {
             })
     })
 
+    app.get("/api/getOne", (req, res) => { //get one Panel by shopOrder Number
+        db.Panel.findOne({
+            where: {
+                shopOrder: req.body.shopOrder
+            }
+        }).then(
+            (data) => {
+                res.json(data)
+            })
+    })
+
+
     //==================================================================================
     //===                             POST ROUTES                                    ===                   
     //==================================================================================
@@ -40,36 +52,60 @@ module.exports = function (app) {
     //===                             PUT ROUTES                                     ===                   
     //==================================================================================
 
-    app.put("/api/processOne/", (req, res) => { //update shopOrder with Process 1 measurements
-        console.log(req)
-        db.Panel.update({
-            process1M1: parseFloat(req.body.process1M1),
-            process1M2: parseFloat(req.body.process1M2),
-            process1Zone: req.body.process1Zone,
-            process1PuckNum: req.body.process1PuckNum
-        }, {
-                where: {
-                    shopOrder: req.body.shopOrder
-                }
-            }).then((data) => {
-                res.json(data)
-            });
-    });
+    app.put("/api/processOne", (req, res) => { //update shopOrder with Process 1 measurements
+        // console.log(req.body);
+        db.Panel.findOne({
+            where: {
+                shopOrder: req.body.shopOrder
+            }
+        }).then((panel) => {
+            console.log(panel);
+            if (panel) {
+                db.Panel.update({
+                    process1M1: req.body.process1M1,
+                    process1M2: req.body.process1M2,
+                    process1Zone: req.body.process1Zone,
+                    process1PuckNum: req.body.process1PuckNum
+                }, {
+                        where: {
+                            shopOrder: req.body.shopOrder
+                        }
+                    }).then((data) => {
+                        console.log("-----------------------------------------------------------------------------------")
+                        console.log(data)
+                        let msg = (data) ? `Shop Order successfully updated ${req.body.shopOrder}` : "Unable to update"
+                        res.json(msg)
+                    })
+            }
+            else {
+                res.json(`Panel not found`)
+            }
+
+        })
+    })
 
     app.put("/api/processTwo", (req, res) => { //update shopOrder with Process 2 measurements
         console.log(req.body);
-        db.Panel.update({
-            process2M1: req.body.process2M1,
-            process2M2: req.body.process2M2,
-            process2Zone: req.body.process2Zone,
-            process2PuckNum: req.body.process2PuckNum
-        }, {
-                where: {
-                    shopOrder: req.body.shopOrder
-                }
-            }).then((data) => {
-                res.json(data)
-            })
+        db.Panel.findOne({
+            where: {
+                shopOrder: req.body.shopOrder
+            }
+        }).then((res) => {
+            console.log(res);
+            db.Panel.update({
+                process2M1: req.body.process2M1,
+                process2M2: req.body.process2M2,
+                process2Zone: req.body.process2Zone,
+                process2PuckNum: req.body.process2PuckNum
+            }, {
+                    where: {
+                        shopOrder: req.body.shopOrder
+                    }
+                }).then((data) => {
+                    res.json(data)
+                })
+        })
+
     });
 
-} // module export close
+}    // module export close

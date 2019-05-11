@@ -5,7 +5,6 @@ import Login from "./pages/Login/Login";
 import Landing from "./pages/LandingPage/Landing";
 import Process from "./pages/Process/Process";
 import Measurements from "./pages/Measurements/Measurements"
-import NavbarComponent from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound/NotFound";
 import Process1 from "./pages/Process1/Process1"
 import Process2 from "./pages/Process2/Process2"
@@ -38,7 +37,6 @@ render(){
     
     <Router>
       <div>
-        <NavbarComponent />
         <Switch>
           <Route exact path="/" component={Login} />
           {/* <Route exact path="/LandingPage" render={(state) => <LandingPage {...state}/>} /> */}
