@@ -13,6 +13,18 @@ module.exports = function (app) {
             })
     })
 
+    app.get("/api/getOne", (req, res) => { //get one Panel by shopOrder Number
+        db.Panel.findOne({
+            where: {
+                shopOrder: req.body.shopOrder
+            }
+        }).then(
+            (data) => {
+                res.json(data)
+            })
+    })
+
+
     //==================================================================================
     //===                             POST ROUTES                                    ===                   
     //==================================================================================
