@@ -25,6 +25,7 @@ function EnterDataComponent(props) {
 
             <Button onClick={() => {
                 props.setPanelNumber(props.panel);
+                //props.setPanelNumber(this.formBasicEmail);
             }}>test</Button>
 
         </Form>
