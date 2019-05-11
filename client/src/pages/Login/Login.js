@@ -1,26 +1,31 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import LoginComponent from "./LoginCard";
+import LoginComponent from "../../components/LoginCard/LoginCard";
+import connectImage from "../LandingPage/connectwork.png";
+import logoImage from "../Login/logo_yellow.png";
 import "../Login/Login.css";
 
-class Login extends Component {
-    state = {
-        userName: "",
-        passWord: "",
-        loggedIn: false,
-        currentPage: "Login"
-    }
+var backgroundStyle = {
+    backgroundImage: `url(${connectImage})`,
+    resizeMode: "stretch",
+    width: null,
+    height: null
+}
 
+class Login extends Component {
 
     render() {
         return (
-            <Container className="mainBox">
-                <Row className="loginBox">
-                    <Col>
-                        <LoginComponent />
-                    </Col>
-                </Row>
-            </Container>
+            <div style={backgroundStyle}>
+                <Container className="mainBox">
+                    <Row className="loginBox">
+                        <Col>
+                            <img src={logoImage} className="logo" />
+                            <LoginComponent />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
     }
 };

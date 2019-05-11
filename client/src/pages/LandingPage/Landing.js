@@ -13,6 +13,7 @@ var backgroundStyle = {
 }
 
 class Landing extends Component {
+
     render() {
         return (
             <div style={backgroundStyle}>
