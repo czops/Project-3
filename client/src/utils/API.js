@@ -10,6 +10,10 @@ export default {
         return axios.get("/api/allPanels");
     },
 
+    getOnePanel: function (shopOrder) {
+        return axios.get("/api/getOne", shopOrder);
+    },
+
     //===============================
     //==      POST ROUTES          ==
     //===============================
@@ -17,13 +21,13 @@ export default {
     // Create a new panel. panelInfo will have to include:
     // shopOrder / modelNum / panelSizeX / panelSizeY
     saveNewPanel: function (panelInfo) {
-        return axios.post("/api/newPanel/" + panelInfo);
+        return axios.post("/api/newPanel/", panelInfo);
     },
 
     // Create a new puck, returns puckNum expects:
     // shopOrder to ensure association
     newPuck: function (shopOrder) {
-        return axios.post("/api/newPuck/" + shopOrder);
+        return axios.post("/api/newPuck/", shopOrder);
     },
 
 

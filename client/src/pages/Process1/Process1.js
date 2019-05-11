@@ -10,11 +10,17 @@ class Process1 extends Component {
     }
 
     componentDidMount() {
-        API.getAllPanels()
+        API.getAllPanels() //get all panels on page load and log to client console
             .then((res) => {
                 console.log(res.data)
+            });
+        let shopOrder = this.state.shopOrder;
+        API.getOnePanel(shopOrder)
+            .then((panel) => {
+                console.log("panel----------------------------")
+                console.log(panel)
             })
-    }
+    };
 
     handleInputChange = (event) => {
         const { name, value } = event.target;
