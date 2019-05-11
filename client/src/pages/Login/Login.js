@@ -5,6 +5,7 @@ import connectImage from "../LandingPage/connectwork.png";
 import logoImage from "../Login/logo_yellow.png";
 import "../Login/Login.css";
 
+
 var backgroundStyle = {
     backgroundImage: `url(${connectImage})`,
     resizeMode: "stretch",

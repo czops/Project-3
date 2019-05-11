@@ -1,6 +1,17 @@
 import React, { Component } from "react";
-import { Button, Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
+import connectImage from "../LandingPage/connectwork.png";
 import API from "../../utils/API";
+import DataEntryComponent from "../../components/DataEntry1/DataEntry1";
+import Navbar from "../../components/navbar/Navbar";
+import "../Process1/Process1.css";
+
+var backgroundStyle = {
+    backgroundImage: `url(${connectImage})`,
+    resizeMode: "stretch",
+    width: null,
+    height: null
+}
 
 class Process1 extends Component {
     state = {
@@ -42,48 +53,54 @@ class Process1 extends Component {
                 console.log(res)
             })
     }
-
-
-
     render() {
         return (
+            <div style={backgroundStyle}>
+            <Navbar />
             <Container>
                 <Row>
                     <Col>
-                        <h1>Process 1</h1>
-                        <form>
-                            <Container>
-                                <Row>
-                                    <Col>
-
-                                        <input
-                                            name="process1M1"
-                                            value={this.state.process1M1}
-                                            onChange={this.handleInputChange}
-                                            placeholder="0.00"
-                                        />
-                                        <p>Process 1 Measurement 1</p>
-                                        <br />
-
-                                        <input
-                                            name="process1M2"
-                                            value={this.state.process1M2}
-                                            onChange={this.handleInputChange}
-                                            placeholder="0.00"
-                                        />
-                                        <p>Process 1 Measurement 2</p>
-                                    </Col>
-                                </Row>
-                                <Button onClick={this.PUTsomeStuff}>
-                                    Do Stuff!
-                                </Button>
-                            </Container>
-                        </form>
+                        <DataEntryComponent />
                     </Col>
                 </Row>
             </Container>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
         )
     }
 };
 
 export default Process1;
+
+{/* <Container>
+    <Row>
+        <Col>
+
+            <input
+                name="process1M1"
+                value={this.state.process1M1}
+                onChange={this.handleInputChange}
+                placeholder="0.00"
+            />
+            <p>Process 1 Measurement 1</p>
+            <br />
+
+            <input
+                name="process1M2"
+                value={this.state.process1M2}
+                onChange={this.handleInputChange}
+                placeholder="0.00"
+            />
+            <p>Process 1 Measurement 2</p>
+        </Col>
+    </Row>
+    <Button onClick={this.PUTsomeStuff}>
+        Do Stuff!
+    </Button>
+</Container> */}

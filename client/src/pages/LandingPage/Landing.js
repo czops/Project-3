@@ -4,6 +4,7 @@ import "../LandingPage/Landing.css";
 import connectImage from "./connectwork.png";
 import EnterDataComponent from "../../components/EnterDataCard/EnterDataCard";
 import LookUpComponent from "../../components/LookUpCard/LookUpCard";
+import NavBar from "../../components/navbar/Navbar";
 
 var backgroundStyle = {
     backgroundImage: `url(${connectImage})`,
@@ -18,6 +19,7 @@ function Landing(props) {
     console.log(props.setPanelNumber);
     return (
         <div style={backgroundStyle}>
+            <NavBar />
             <Container>
                 <Row>
                     <Col>
