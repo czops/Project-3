@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import "../navbar/navbar.css";
+import "../navbar/Navbar.css";
 
 
 function NavbarComponent() {
@@ -9,8 +9,8 @@ function NavbarComponent() {
             <Navbar.Brand>
                 <img
                     src="./images/logo.png"
-                    // width="90"
-                    // height="30"
+                    width="230"
+                    height="auto"
                     className="d-inline-block align-top"
                     alt="Circuit Ninjas"
                 />

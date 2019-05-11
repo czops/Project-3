@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Landing from "./pages/LandingPage/Landing";
 import Measurements from "./pages/Measurements/Measurements"
-import NavbarComponent from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound/NotFound";
 import Process1 from "./pages/Process1/Process1"
 import Process2 from "./pages/Process2/Process2"
@@ -14,7 +13,6 @@ function App() {
   return (
     <Router>
       <div>
-        <NavbarComponent />
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/Landing" component={Landing} />

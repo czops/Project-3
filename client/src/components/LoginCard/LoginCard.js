@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "../LoginCard/LoginCard.css";
 
 function LoginComponent () {
     return (
@@ -14,8 +15,8 @@ function LoginComponent () {
                 <Form.Label>Enter Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Button variant="primary" type="submit">
-                Login
+            <Button variant="primary" type="submit" className="loginButton">
+                LOGIN
             </Button>
         </Form>
     )

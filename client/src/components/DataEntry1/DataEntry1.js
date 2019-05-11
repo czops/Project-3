@@ -1,9 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import "../EnterDataCard/EnterDataCard.css";
 
-function EnterDataComponent () {
+function dataEntry01 () {
     return (
         <Form className="formBackground">
             <Form.Text className="titleText">
@@ -15,7 +13,7 @@ function EnterDataComponent () {
             
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Total number of Panels</Form.Label>
-                <Form.Control type="number" placeholder="#" className="panelNumber"/>
+                <Form.Control type="number" placeholder="#" />
             </Form.Group>
 
             <Button variant="primary" type="submit" className="buttonStandard">
@@ -25,4 +23,4 @@ function EnterDataComponent () {
     )
 };
 
-export default EnterDataComponent;
+export default dataEntry01;
