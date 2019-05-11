@@ -16,7 +16,8 @@ class App extends Component {
   // return <AppIntro />;
 
   state = {
-    loggedIn: false
+    loggedIn: false,
+    panel: 1
   }
   
   setMasterState = ( key, value) => {
@@ -27,6 +28,11 @@ class App extends Component {
     this.setState(newState);
   }
 
+  setPanelNumber = (number) => {
+    console.log("got here!!");
+    console.log(number);
+  }
+    
 render(){
   return (
     
@@ -36,7 +42,7 @@ render(){
         <Switch>
           <Route exact path="/" component={Login} />
           {/* <Route exact path="/LandingPage" render={(state) => <LandingPage {...state}/>} /> */}
-          <Route exact path="/Landing" component={Landing} />
+          <Route exact path="/Landing" render={(state) => <Landing masterState={this.state} setMasterState={this.setMasterState} setPanelNumber={this.setPanelNumber} />} />
           <Route exact path="/Process" component={Process} />
           <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
           <Route exact path="/Process1" component={Process1} />

@@ -12,19 +12,21 @@ var backgroundStyle = {
     height: null
 }
 
-class Landing extends Component {
-    render() {
-        return (
-            <div style={backgroundStyle}>
-                <Container>
-                    <Row>
-                        <Col>
-                            <EnterDataComponent />
-                            <LookUpComponent />
-                        </Col>
-                    </Row>
-                </Container>
-                <Container>
+function Landing(props) {
+    console.log(props);
+    console.log(props.masterState.panel);
+    console.log(props.setPanelNumber);
+    return (
+        <div style={backgroundStyle}>
+            <Container>
+                <Row>
+                    <Col>
+                        <EnterDataComponent panel={props.masterState.panel} setPanelNumber={props.setPanelNumber}/>
+                        <LookUpComponent />
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
                 <br />
                 <br />
                 <br />
@@ -45,10 +47,9 @@ class Landing extends Component {
                 <br />
                 <br />
                 <br />
-                </Container>
-            </div>
-        )
-    }
+            </Container>
+        </div>
+    )
 };
 
 export default Landing;

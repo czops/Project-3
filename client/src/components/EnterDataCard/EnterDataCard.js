@@ -3,7 +3,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../EnterDataCard/EnterDataCard.css";
 
-function EnterDataComponent() {
+function EnterDataComponent(props) {
+    console.log(props);
     return (
         <Form className="formBackground">
             <Form.Text className="titleText">
@@ -15,15 +16,16 @@ function EnterDataComponent() {
 
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Total number of Panels</Form.Label>
-                <Form.Control type="number" placeholder="#" />
+                <Form.Control type="number" placeholder={props.panel} />
             </Form.Group>
 
             <Button variant="primary" type="submit" className="buttonStandard" >
                 START
             </Button>
-            <button onClick={() => {
-                this.props.setMasterState('panels', true);
-            }}>test</button>
+
+            <Button onClick={() => {
+                props.setPanelNumber(props.panel);
+            }}>test</Button>
 
         </Form>
     )
