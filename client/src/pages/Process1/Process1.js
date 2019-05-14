@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Col, Row, Container } from "react-bootstrap";
+import React from "react";
+import { Col, Row, Container, Button } from "react-bootstrap";
 import connectImage from "../LandingPage/connectwork.png";
 import API from "../../utils/API";
 import DataEntryComponent from "../../components/DataEntry1/DataEntry1";
