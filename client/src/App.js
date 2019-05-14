@@ -19,7 +19,8 @@ class App extends Component {
   state = {
     loggedIn: false,
     process1M1: 0,
-    process1M2: 0
+    process1M2: 0,
+    shopOrder: 0
   }
 
   /*Optimized version of the props below*/
