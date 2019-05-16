@@ -1,0 +1,22 @@
+.positionBox {
+    margin-top: 50px;
+}
+
+.mainCard {
+    margin: auto;
+    height: 400px;
+    width: 600px;
+}
+
+.cardTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.cardMessage {
+    text-align: center;
+}

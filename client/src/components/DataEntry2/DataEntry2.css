@@ -13,14 +13,18 @@
     padding-bottom: 40px;
 }
 
-.selectRow2 {
+.measureBox {
     padding-left: 50px;
     padding-right: 50px;
-    background-color: #ffffff;
+    background-color: #D3D3D3;
     margin: auto;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
+.secondMeasure {
+    padding-left: 50px;
+}
 .checkboxes {
     padding-right: 60px;
 }
