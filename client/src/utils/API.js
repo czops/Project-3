@@ -30,8 +30,6 @@ export default {
         return axios.post("/api/newPuck/", shopOrder);
     },
 
-
-
     //===============================
     //==      PUT ROUTES           ==
     //===============================

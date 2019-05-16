@@ -17,13 +17,29 @@ class App extends Component {
   // return <AppIntro />;
 
   state = {
+    /*Login*/
     loggedIn: false,
+   
+    /*Landing*/
+    panels: 0,
+    process: 0,
+
+    /*Process1*/
+    panelSize: 0,
+    zone: 0,
+    shopOrder: 0,
+    modelNumber: "",
+
+    /*Measurements - this should be a separate state within the */
+
     process1M1: 0,
     process1M2: 0,
-    shopOrder: 0
+
+
+
   }
 
-  /*Optimized version of the props below*/
+  /*Optimized version of the props below - not really using this right now*/
 
   setMasterState = (key, value) => {
 
