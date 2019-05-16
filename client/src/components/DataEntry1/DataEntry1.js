@@ -10,16 +10,36 @@ function DataEntryComponent () {
         <div className="formBox">
             <Form>
             <Form.Text className="stepText">
-                STEP 1.
+                STEP 2.
             </Form.Text>
             <Form.Text className="sizeTitle">Enter the size of the Panels</Form.Text>
             <Form.Row className="selectRow1">
-                    <Form.Group id="formGridCheckbox" className="checkboxes">
-                        <Form.Check type="checkbox" label="12 x 24" />
-                        <Form.Check type="checkbox" label="12 x 18" />
-                        <Form.Check type="checkbox" label="12 x 36" />
-                        <Form.Check type="checkbox" label="18 x 24" />
-                    </Form.Group>
+                <Form>
+                    {['radio'].map(type => (
+                        <div key={`default-${type}`} className="mb-3">
+                            <Form.Check 
+                                type={type}
+                                id={`default-${type}`}
+                                label="12 x 18"
+                            />
+                            <Form.Check 
+                                type={type}
+                                id={`default-${type}`}
+                                label="12 x 24"
+                            />
+                            <Form.Check 
+                                type={type}
+                                id={`default-${type}`}
+                                label="12 x 36"
+                            />
+                            <Form.Check 
+                                type={type}
+                                id={`default-${type}`}
+                                label="18 x 24"
+                            />
+                        </div>
+                    ))}
+                </Form>
         
                     <Form.Group>
                         <Image src="./images/circuit_logo.png" rounded className="circuitImage" />
@@ -53,9 +73,6 @@ function DataEntryComponent () {
                         <Form.Control placeholder="Enter #" />
                     </Form.Group>
                 </Form.Row>
-            <Button variant="primary" type="submit" className="submitButton">
-                SUBMIT
-            </Button>
         </Form>
     </div>
     )
