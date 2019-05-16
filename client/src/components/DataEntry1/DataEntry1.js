@@ -14,33 +14,7 @@ function DataEntryComponent () {
             </Form.Text>
             <Form.Text className="sizeTitle">Enter the size of the Panels</Form.Text>
             <Form.Row className="selectRow1">
-                <Form>
-                    {['radio'].map(type => (
-                        <div key={`default-${type}`} className="mb-3">
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="12 x 18"
-                            />
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="12 x 24"
-                            />
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="12 x 36"
-                            />
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="18 x 24"
-                            />
-                        </div>
-                    ))}
-                </Form>
-        
+            
                     <Form.Group>
                         <Image src="./images/circuit_logo.png" rounded className="circuitImage" />
                     </Form.Group>
@@ -58,6 +32,17 @@ function DataEntryComponent () {
                             <option>Zone 7</option>
                             <option>Zone 8</option>
                             <option>Zone 9</option>
+                        </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
+                        <Form.Label>Panel Size</Form.Label>
+                        <Form.Control as="select">
+                            <option>Choose...</option>
+                            <option>12x18</option>
+                            <option>12x24</option>
+                            <option>12x36</option>
+                            <option>18x24</option>
                         </Form.Control>
                     </Form.Group>
 
