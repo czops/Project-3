@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
-import Lottie from 'react-lottie';
-import animationData from './animation.json';
+import React, { Component } from 'react'
+import Lottie from 'react-lottie'
+import animationData from '../components/logo.json'
 
 class UncontrolledLottie extends Component {
 
 
-    render(){
+  render(){
 
-        const defaultOptions = {
-            loop: false,
-            autoplay: true, 
-            animationData: animationData,
-            rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice'
-            }
-        };
+    const defaultOptions = {
+      loop: false,
+      autoplay: true, 
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
 
-        return(
-            <div>
-                <h1>Lottie</h1>
-                <p>Base animation free from external manipulation</p>
-                <Lottie options={defaultOptions}
-                    height={400}
-                    width={400}
-                />
-            </div>
-        )
-    }
+    return(
+      <div>
+        <Lottie options={defaultOptions}
+              height={50}
+              width={400}
+        />
+      </div>
+    )
+  }
 }
 
-export default UncontrolledLottie;
+export default UncontrolledLottie
