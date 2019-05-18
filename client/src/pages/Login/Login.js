@@ -1,3 +1,4 @@
+import API from "../../utils/API"
 import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import LoginComponent from "../../components/LoginCard/LoginCard";
@@ -14,6 +15,28 @@ var backgroundStyle = {
 
 class Login extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: "",
+            password: ""
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
+    handleSubmit() {
+        event.preventDefault();
+        alert('A name was submitted: ' + this.state.value);
+    }
+
+
+
     render() {
         return (
             <div style={backgroundStyle}>
@@ -21,7 +44,9 @@ class Login extends Component {
                     <Row className="loginBox">
                         <Col>
                             <img src={logoImage} className="logo" />
-                            <LoginComponent />
+                            <LoginComponent
+                                buttonLogic={() => { this.handleSubmit() }}
+                            />
                         </Col>
                     </Row>
                 </Container>

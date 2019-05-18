@@ -1,27 +1,46 @@
 var db = require("../models");
 
+const TokenGenerator = require('token-generator')({
+    salt: "sk2gV!ItMVuZf6TP2uR!XzrLJcrQPF86M!2vLs62",
+    timestampMap: '6ui7Q$@prE', // 10 chars array for obfuscation proposes
+});
+
 module.exports = function (app) {
+
 
     //==================================================================================
     //===                             GET ROUTES                                     ===                   
     //==================================================================================
+
+
     app.get("/api/allPanels", (req, res) => { //get all panels
-        db.Panel.findAll({
-        }).then(
-            (data) => {
-                res.json(data)
-            })
+        if (TokenGenerator.isValid(req.body.token)) {
+            db.Panel.findAll({
+            }).then(
+                (data) => {
+                    res.json(data)
+                })
+        }
+        else {
+            res.json({ userName: undefined })
+        }
+
     })
 
     app.get("/api/getOne", (req, res) => { //get one Panel by shopOrder Number
-        db.Panel.findOne({
-            where: {
-                shopOrder: req.body.shopOrder
-            }
-        }).then(
-            (data) => {
-                res.json(data)
-            })
+        if (TokenGenerator.isValid(req.body.token)) {
+            db.Panel.findOne({
+                where: {
+                    shopOrder: req.body.shopOrder
+                }
+            }).then(
+                (data) => {
+                    res.json(data)
+                })
+        }
+        else {
+            res.json({ message: "please log in" })
+        }
     })
 
 
