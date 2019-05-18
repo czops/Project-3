@@ -1,10 +1,10 @@
 import { Col, Row, Container } from "react-bootstrap";
+import { Redirect } from "react-router-dom"
 import "../Login/Login.css";
 import authenticationAPI from "../../utils/authenticationAPI"
 import connectImage from "../LandingPage/connectwork.png";
 import LoginComponent from "../../components/LoginCard/LoginCard";
 import React, { Component } from "react";
-import { Redirect, Route } from "react-router-dom"
 
 
 
