@@ -1,30 +1,40 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import { Col, Row, Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import UncontrolledLottie from "../UncontrolledLottie";
 import "../LoginCard/LoginCard.css";
+import {Animated} from "react-animated-css";
+import logo from "../../pages/Login/logo_yellow.png";
 
 function LoginComponent(props) {
 
     return (
-        <Form>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Enter Username</Form.Label>
-                <Form.Control type="name" placeholder="Username" value={props.username} />
-            </Form.Group>
+        <Container className="containBox">
+            <Row>
+                <Col className="loginBox">
+                
+                <UncontrolledLottie />
+                
+                <Form className="loginForm">
+                    <Form.Text className="welcomeMessage">
+                        Welcome to the Circuit Ninjas Panel Database. Please enter your credentials to continue.
+                    </Form.Text>
+                    <Form.Group className="inputFields">
+                        <Form.Label>Enter Username</Form.Label>
+                        <Form.Control type="name" placeholder="Username" />
+                        <Form.Label className="passwordEnter">Enter Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Enter Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={props.password} />
-            </Form.Group>
-            <Button
-                variant="primary"
-                type="submit"
-                className="loginButton"
-                onClick={() => props.buttonLogic(props.id)}
-            >
-                LOGIN
-            </Button>
-        </Form>
+                    <Button variant="primary" type="submit" className="loginButton float-right">
+                        LOGIN
+                    </Button>
+                </Form>
+
+                </Col>
+            </Row>
+        </Container>
     )
 };
 

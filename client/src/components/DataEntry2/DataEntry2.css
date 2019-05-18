@@ -13,15 +13,18 @@
     padding-bottom: 40px;
 }
 
-.selectRow2 {
+.measureBox {
     padding-left: 50px;
     padding-right: 50px;
-    background-color: #ffffff;
+    background-color: #D3D3D3;
     margin: auto;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
+.secondMeasure {
+    padding-left: 50px;
+}
 .checkboxes {
     padding-right: 60px;
 }
@@ -69,4 +72,24 @@
     margin-bottom: 40px;
     box-shadow: 2px 2px 2px rgb(169, 169, 169);
     padding: 12px
+}
+
+.savedInfo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+}
+
+.processTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.measureBox {
+    padding-top: 20px;
 }

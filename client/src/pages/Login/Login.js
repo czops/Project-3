@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import LoginComponent from "../../components/LoginCard/LoginCard";
 import connectImage from "../LandingPage/connectwork.png";
-import logoImage from "../Login/logo_yellow.png";
 import "../Login/Login.css";
+
 
 var backgroundStyle = {
     backgroundImage: `url(${connectImage})`,
@@ -40,13 +40,10 @@ class Login extends Component {
     render() {
         return (
             <div style={backgroundStyle}>
-                <Container className="mainBox">
-                    <Row className="loginBox">
+                <Container>
+                    <Row>
                         <Col>
-                            <img src={logoImage} className="logo" />
-                            <LoginComponent
-                                buttonLogic={() => { this.handleSubmit() }}
-                            />
+                            <LoginComponent />
                         </Col>
                     </Row>
                 </Container>

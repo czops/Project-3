@@ -7,25 +7,17 @@ function EnterDataComponent(props) {
     console.log(props);
     return (
         <Form className="formBackground">
-            <Form.Text className="titleText">
-                ENTER NEW DATA
+            <Form.Text className="stepText">
+                STEP 1.
             </Form.Text>
             <Form.Text className="infoText">
                 Please enter the number of Panels in the order start the data enter process.
             </Form.Text>
 
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group controlId="formPanelNumber" className="numberBox">
                 <Form.Label>Total number of Panels</Form.Label>
-                <Form.Control type="number" placeholder={props.panel} />
+                <Form.Control type="number" placeholder="0" />
             </Form.Group>
-
-            <Button variant="primary" type="submit" className="buttonStandard" >
-                START
-            </Button>
-
-            <Button onClick={() => {
-                props.setPanelNumber(props.panel);
-            }}>test</Button>
 
         </Form>
     )
