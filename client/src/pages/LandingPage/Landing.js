@@ -1,11 +1,11 @@
-import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import "../LandingPage/Landing.css";
 import connectImage from "./connectwork.png";
-import EnterDataComponent from "../../components/EnterDataCard/EnterDataCard";
 import DataEntryComponent from "../../components/DataEntry1/DataEntry1";
 import DataEntryComponent2 from "../../components/DataEntry2/DataEntry2";
+import EnterDataComponent from "../../components/EnterDataCard/EnterDataCard";
 import NavBar from "../../components/navbar/Navbar";
+import React from "react";
 
 var backgroundStyle = {
     backgroundImage: `url(${connectImage})`,

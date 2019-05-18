@@ -1,9 +1,11 @@
-import authenticationAPI from "../../utils/authenticationAPI"
-import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import LoginComponent from "../../components/LoginCard/LoginCard";
-import connectImage from "../LandingPage/connectwork.png";
 import "../Login/Login.css";
+import authenticationAPI from "../../utils/authenticationAPI"
+import connectImage from "../LandingPage/connectwork.png";
+import LoginComponent from "../../components/LoginCard/LoginCard";
+import React, { Component } from "react";
+import { Redirect, Route } from "react-router-dom"
+
 
 
 var backgroundStyle = {
@@ -19,7 +21,8 @@ class Login extends Component {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            loggedin: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -43,12 +46,17 @@ class Login extends Component {
             .then((loggedUser) => {
                 localStorage.setItem("username", loggedUser.data.userName);
                 localStorage.setItem("token", loggedUser.data.token);
-                this.props.history.push('/landing')
+                this.setState({
+                    loggedin: true
+                })
             })
     };
 
 
     render() {
+        if (this.state.loggedin === true) {
+            return <Redirect to="/Landing" />
+        }
         return (
             <div style={backgroundStyle}>
                 <Container>
