@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import "../DataEntry1/DataEntry.css";
 
-function DataEntryComponent () {
+function DataEntryComponent (props) {
     return (
         <div className="formBox">
             <Form>
@@ -14,32 +14,7 @@ function DataEntryComponent () {
             </Form.Text>
             <Form.Text className="sizeTitle">Enter the size of the Panels</Form.Text>
             <Form.Row className="selectRow1">
-                <Form>
-                    {['radio'].map(type => (
-                        <div key={`default-${type}`} className="mb-3">
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="12 x 18"
-                            />
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="12 x 24"
-                            />
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="12 x 36"
-                            />
-                            <Form.Check 
-                                type={type}
-                                id={`default-${type}`}
-                                label="18 x 24"
-                            />
-                        </div>
-                    ))}
-                </Form>
+                
         
                     <Form.Group>
                         <Image src="./images/circuit_logo.png" rounded className="circuitImage" />
@@ -47,7 +22,7 @@ function DataEntryComponent () {
 
                     <Form.Group as={Col} controlId="formZoneNumber" className="zoneDrop">
                         <Form.Label>Zone Number</Form.Label>
-                        <Form.Control as="select">
+                        <Form.Control as="select" onChange={props.setZone}>
                             <option>Choose...</option>
                             <option>Zone 1</option>
                             <option>Zone 2</option>
@@ -60,17 +35,27 @@ function DataEntryComponent () {
                             <option>Zone 9</option>
                         </Form.Control>
                     </Form.Group>
+                    <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
+                        <Form.Label>Panel Size</Form.Label>
+                        <Form.Control as="select" onChange={props.setSize}>
+                            <option>Choose...</option>
+                            <option>12x18</option>
+                            <option>12x24</option>
+                            <option>12x36</option>
+                            <option>18x24</option>
+                        </Form.Control>
+                    </Form.Group>
 
                 </Form.Row>
                 <Form.Row className="selectRow2">
                     <Form.Group as={Col} controlId="formModelNumber">
                         <Form.Label>Model Number</Form.Label>
-                        <Form.Control placeholder="Enter #" />
+                        <Form.Control onChange={props.setModelNumber} placeholder="Enter #" />
                     </Form.Group>
         
                     <Form.Group as={Col} controlId="formShopNumber">
                         <Form.Label>Shop Number</Form.Label>
-                        <Form.Control placeholder="Enter #" />
+                        <Form.Control onChange={props.setShopOrderNumber} type="number" placeholder="Enter #" />
                     </Form.Group>
                 </Form.Row>
         </Form>

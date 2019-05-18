@@ -16,7 +16,7 @@ function EnterDataComponent(props) {
 
             <Form.Group controlId="formPanelNumber" className="numberBox">
                 <Form.Label>Total number of Panels</Form.Label>
-                <Form.Control type="number" placeholder="0" />
+                <Form.Control onChange={props.setPanelNumber} name="numPanels" type="number" placeholder="0" />
             </Form.Group>
 
         </Form>

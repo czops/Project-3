@@ -25,8 +25,8 @@ function Landing(props) {
                 <Row>
                     <Col>
                         <EnterDataComponent panel={props.masterState.panel} setPanelNumber={props.setPanelNumber}/>
-                        <DataEntryComponent />
-                        <DataEntryComponent2 />
+                        <DataEntryComponent setModelNumber={props.setModelNumber} setShopOrderNumber={props.setShopOrderNumber} setZone={props.setZone} setSize={props.setSize}/>
+                        <DataEntryComponent2 panels={props.masterState.panels}/>
                     </Col>
                 </Row>
             </Container>

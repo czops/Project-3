@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "../DataEntry2/DataEntry2.css";
 
-function DataEntryComponent2 () {
+function DataEntryComponent2 (props) {
     return (
         <div className="formBox">
             <Form>
@@ -14,21 +14,22 @@ function DataEntryComponent2 () {
             <Form.Text className="sizeTitle">
                 Enter the Measurements
             </Form.Text>
-            <Form.Row className="measureBox">
+            {props.panels.map(panel => 
+                <Form.Row className="measureBox">
                 <Form.Group as={Col} controlId="formModelNumber">
-                    <Form.Text className="processTitle"> PANEL # <span className="panelNumberEnter"></span></Form.Text>
+                    <Form.Text className="processTitle"> PANEL {panel.panelNumber} <span className="panelNumberEnter"></span></Form.Text>
                     <Form.Row>
                         <Form.Group>
                             <Form.Label>Measurement 1</Form.Label>
-                            <Form.Control placeholder="Enter #" className="measurement1"/>
+                            <Form.Control value={panel.m1} placeholder="Enter #" className="measurement1"/>
                         </Form.Group>
                         <Form.Group className="secondMeasure">
                             <Form.Label>Measurement 2</Form.Label>
-                            <Form.Control placeholder="Enter #" className="measurement2"/>
+                            <Form.Control value={panel.m2} placeholder="Enter #" className="measurement2"/>
                         </Form.Group>
                     </Form.Row>
                 </Form.Group>
-            </Form.Row>
+            </Form.Row>)}
             <Button variant="primary" type="submit" className="submitButton">
                 SUBMIT
             </Button>

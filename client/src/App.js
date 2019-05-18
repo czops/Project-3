@@ -18,12 +18,18 @@ class App extends Component {
 
   state = {
     loggedIn: false,
+
+    panels: [],
+    panelsY: 0,
     process1M1: 0,
     process1M2: 0,
-    shopOrder: 0
+    shopOrderNumber: 0,
+    modelNumber: "",
+    size: "",
+    zone: 0
   }
 
-  /*Optimized version of the props below*/
+  /*Optimized version of the setState props below --- stretch is making this work instead*/
 
   setMasterState = (key, value) => {
 
@@ -35,21 +41,58 @@ class App extends Component {
 
   /*Edit the master state using the following props*/
 
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   setPanelNumber = (number) => {
     console.log("Number of panels");
     console.log(number);
-    this.setMasterState('panels', number);
+    let panelCount = parseInt(number.target.value);
+    //this.setState({ panelsY: number.target.value });
+
+    var newPanels = [];
+    for(let i = 0; i < panelCount; i++) {
+      newPanels.push({
+        panelNumber: i+1,
+        m1: "m1",
+        m2: "m2"
+      })
+    }
+    this.setState({
+      panelsY: panelCount,
+      panels: newPanels
+    });
+    // this.setMasterState('panels', number);
   }
 
   setModelNumber = (number) => {
     console.log("Model number");
     console.log(number);
+    this.setState({ modelNumber: number.target.value });
   }
 
   setShopOrderNumber = (number) => {
     console.log("Shop order number");
     console.log(number);
+    this.setState({ shopOrderNumber: number.target.value });
   }
+
+  setSize = (number) => {
+    console.log("Panel Size");
+    console.log(number);
+    //This is not an input box - rather a selection
+    this.setState({ size: number.target.value });
+  }
+
+  setZone = (number) => {
+    console.log("Panel Size");
+    console.log(number);
+    //This is not an input box - rather a selection
+    this.setState({ zone: number.target.value });
+  }
+
+
 
   successPageLoad = () => {
     console.log(this.Process1.state);
@@ -106,7 +149,14 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Login} />
             {/* <Route exact path="/LandingPage" render={(state) => <LandingPage {...state}/>} /> */}
-            <Route exact path="/Landing" render={(state) => <Landing masterState={this.state} setMasterState={this.setMasterState} setPanelNumber={this.setPanelNumber} />} />
+            <Route exact path="/Landing" render={(state) => <Landing 
+            masterState={this.state} 
+            setMasterState={this.setMasterState} 
+            setPanelNumber={this.setPanelNumber} 
+            setModelNumber={this.setModelNumber} 
+            setShopOrderNumber={this.setShopOrderNumber} 
+            setZone={this.setZone} 
+            setSize={this.setSize}/>} />
             <Route exact path="/Process" component={Process} />
             <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
             <Route exact path="/Process1" render={(state) => <Process1 masterState={this.state} setMasterState={this.setMasterState} process1CheckState={this.process1CheckState} handleInputChange={this.handleInputChange} PUTsomeStuff={this.PUTsomeStuff} />} />
