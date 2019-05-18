@@ -27,7 +27,7 @@ function LoginComponent(props) {
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" className="loginButton float-right">
+                    <Button variant="primary" type="submit" className="loginButton" block>
                         LOGIN
                     </Button>
                 </Form>
