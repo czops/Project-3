@@ -22,7 +22,7 @@ function LoginComponent(props) {
                     </Form.Text>
                         <Form.Group className="inputFields">
                             <Form.Label>Enter Username</Form.Label>
-                            <Form.Control type="name" placeholder="Username" name="userName"
+                            <Form.Control type="name" placeholder="Username" name="username"
                                 value={props.userName} onChange={(event) => props.onChange(event)} />
                             <Form.Label className="passwordEnter">Enter Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" name="password"

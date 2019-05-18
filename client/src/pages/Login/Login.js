@@ -18,7 +18,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userName: "",
+            username: "",
             password: ""
         };
 
@@ -36,16 +36,16 @@ class Login extends Component {
     handleSubmit(event) {
         event.preventDefault();
         let userInfo = {
-            userName: this.state.userName,
+            username: this.state.username,
             password: this.state.password
         }
-        console.log(userInfo)
         authenticationAPI.login(userInfo)
-            .then(() => {
-                console.log("works")
+            .then((loggedUser) => {
+                localStorage.setItem("username", loggedUser.data.userName);
+                localStorage.setItem("token", loggedUser.data.token);
+                this.props.history.push('/landing')
             })
     };
-
 
 
     render() {
@@ -56,7 +56,7 @@ class Login extends Component {
                         <Col>
                             <LoginComponent
                                 onChange={this.handleChange}
-                                userName={this.state.userName}
+                                username={this.state.username}
                                 password={this.state.password}
                                 handleSubmit={this.handleSubmit} />
                         </Col>
