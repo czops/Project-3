@@ -82,6 +82,7 @@ class App extends Component {
     var name = event.target.name;
     console.log("Measurement 1");
     console.log(number);
+    console.log(name);
     var currentPanels = this.state.panels;
     for(var i = 0; i < currentPanels.length; i++) {
       if(currentPanels[i].panelNumber === number) {

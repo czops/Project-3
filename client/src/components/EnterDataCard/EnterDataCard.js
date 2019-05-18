@@ -8,7 +8,7 @@ function EnterDataComponent(props) {
     return (
         <Form className="formBackground">
             <Form.Text className="stepText">
-                STEP 1.
+                STEP 2.
             </Form.Text>
             <Form.Text className="infoText">
                 Please enter the number of Panels in the order start the data enter process.

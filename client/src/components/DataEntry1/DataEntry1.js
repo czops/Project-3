@@ -10,7 +10,7 @@ function DataEntryComponent (props) {
         <div className="formBox">
             <Form>
             <Form.Text className="stepText">
-                STEP 2.
+                STEP 1.
             </Form.Text>
             <Form.Text className="sizeTitle">Enter the size of the Panels</Form.Text>
             <Form.Row className="selectRow1">
@@ -18,6 +18,17 @@ function DataEntryComponent (props) {
         
                     <Form.Group>
                         <Image src="./images/circuit_logo.png" rounded className="circuitImage" />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
+                        <Form.Label>Panel Size</Form.Label>
+                        <Form.Control as="select" onChange={props.setSize}>
+                            <option>Choose...</option>
+                            <option>12x18</option>
+                            <option>12x24</option>
+                            <option>12x36</option>
+                            <option>18x24</option>
+                        </Form.Control>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formZoneNumber" className="zoneDrop">
@@ -35,17 +46,6 @@ function DataEntryComponent (props) {
                             <option>9</option>
                         </Form.Control>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
-                        <Form.Label>Panel Size</Form.Label>
-                        <Form.Control as="select" onChange={props.setSize}>
-                            <option>Choose...</option>
-                            <option>12x18</option>
-                            <option>12x24</option>
-                            <option>12x36</option>
-                            <option>18x24</option>
-                        </Form.Control>
-                    </Form.Group>
-
                 </Form.Row>
                 <Form.Row className="selectRow2">
                     <Form.Group as={Col} controlId="formModelNumber">
