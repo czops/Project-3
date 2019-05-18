@@ -31,7 +31,7 @@ class Login extends Component {
     }
 
     handleSubmit() {
-        event.preventDefault();
+        //event.preventDefault();
         alert('A name was submitted: ' + this.state.value);
     }
 
