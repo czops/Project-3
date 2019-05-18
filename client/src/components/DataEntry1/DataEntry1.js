@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import "../DataEntry1/DataEntry.css";
 
@@ -10,7 +9,7 @@ function DataEntryComponent (props) {
         <div className="formBox">
             <Form>
             <Form.Text className="stepText">
-                STEP 2.
+                STEP 1.
             </Form.Text>
             <Form.Text className="sizeTitle">Enter the size of the Panels</Form.Text>
             <Form.Row className="selectRow1">
@@ -20,21 +19,6 @@ function DataEntryComponent (props) {
                         <Image src="./images/circuit_logo.png" rounded className="circuitImage" />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formZoneNumber" className="zoneDrop">
-                        <Form.Label>Zone Number</Form.Label>
-                        <Form.Control as="select" onChange={props.setZone}>
-                            <option>Choose...</option>
-                            <option>Zone 1</option>
-                            <option>Zone 2</option>
-                            <option>Zone 3</option>
-                            <option>Zone 4</option>
-                            <option>Zone 5</option>
-                            <option>Zone 6</option>
-                            <option>Zone 7</option>
-                            <option>Zone 8</option>
-                            <option>Zone 9</option>
-                        </Form.Control>
-                    </Form.Group>
                     <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
                         <Form.Label>Panel Size</Form.Label>
                         <Form.Control as="select" onChange={props.setSize}>
@@ -46,6 +30,21 @@ function DataEntryComponent (props) {
                         </Form.Control>
                     </Form.Group>
 
+                    <Form.Group as={Col} controlId="formZoneNumber" className="zoneDrop">
+                        <Form.Label>Zone Number</Form.Label>
+                        <Form.Control as="select" onChange={props.setZone}>
+                            <option>Choose...</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                        </Form.Control>
+                    </Form.Group>
                 </Form.Row>
                 <Form.Row className="selectRow2">
                     <Form.Group as={Col} controlId="formModelNumber">

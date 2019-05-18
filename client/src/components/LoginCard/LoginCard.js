@@ -4,8 +4,6 @@ import { Col, Row, Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import UncontrolledLottie from "../UncontrolledLottie";
 import "../LoginCard/LoginCard.css";
-// import { Animated } from "react-animated-css";
-// import logo from "../../pages/Login/logo_yellow.png";
 
 function LoginComponent(props) {
 

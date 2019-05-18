@@ -19,10 +19,18 @@ class App extends Component {
   state = {
     loggedIn: false,
 
-    panels: [],
+    panels: [
+      // panelNumber: 1,
+      // shopOrderNumber: this.state.shopOrderNumber,
+      // m1: this.state.process1M1,
+      // m2: this.state.process1M2
+
+    ],
     panelsY: 0,
     process1M1: 0,
     process1M2: 0,
+    process2M1: 0,
+    process2M2: 0,
     shopOrderNumber: 0,
     modelNumber: "",
     size: "",
@@ -55,15 +63,57 @@ class App extends Component {
     for(let i = 0; i < panelCount; i++) {
       newPanels.push({
         panelNumber: i+1,
-        m1: "m1",
-        m2: "m2"
+        shopOrderNumber: this.state.shopOrderNumber,
+        modelNumber: this.state.modelNumber,
+        zone: this.state.zone,
+        size: this.state.size,
+        m1: "",
+        m2: ""
+
       })
     }
-    this.setState({
+    if (panelCount<20){
+      this.setState({
       panelsY: panelCount,
       panels: newPanels
     });
+    } else {
+      this.setState({
+        panelsY: 20,
+        panels: []
+      });
+    }
+    
     // this.setMasterState('panels', number);
+  }
+  
+  setMeasurement1 = (event, number) => {
+    debugger;
+    var value = parseInt(event.target.value);
+    var name = event.target.name;
+    console.log("Measurement 1");
+    console.log(number);
+    console.log(name);
+    var currentPanels = this.state.panels;
+    for(var i = 0; i < currentPanels.length; i++) {
+      if(currentPanels[i].panelNumber === number) {
+        currentPanels[i].m1 = value;
+        break;
+      }
+    }
+    debugger;
+    this.setState({ 
+      panels : currentPanels
+    });
+  }
+
+  setMeasurement2 = (event, number) => {
+    debugger;
+    console.log("Measurement 2");
+    console.log(number);
+    // this.setState({ 
+    //   // panels[number].process1M2: number.target.value 
+    // });
   }
 
   setModelNumber = (number) => {
@@ -156,7 +206,11 @@ class App extends Component {
             setModelNumber={this.setModelNumber} 
             setShopOrderNumber={this.setShopOrderNumber} 
             setZone={this.setZone} 
-            setSize={this.setSize}/>} />
+            setSize={this.setSize}
+            setMeasurement1={this.setMeasurement1} 
+            setMeasurement2={this.setMeasurement2}
+            />} />
+
             <Route exact path="/Process" component={Process} />
             <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
             <Route exact path="/Process1" render={(state) => <Process1 masterState={this.state} setMasterState={this.setMasterState} process1CheckState={this.process1CheckState} handleInputChange={this.handleInputChange} PUTsomeStuff={this.PUTsomeStuff} />} />
