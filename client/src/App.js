@@ -75,17 +75,28 @@ class App extends Component {
     });
     // this.setMasterState('panels', number);
   }
-
   
-  setMeasurement1 = (number) => {
+  setMeasurement1 = (event, number) => {
+    debugger;
+    var value = event.target.value;
+    var name = event.target.name;
     console.log("Measurement 1");
     console.log(number);
-    // this.setState({ 
-      // panels[number.target.].process1M1: number.target.value 
-    // });
+    var currentPanels = this.state.panels;
+    for(var i = 0; i < currentPanels.length; i++) {
+      if(currentPanels[i].panelNumber === number) {
+        currentPanels[i].m1 = value;
+        break;
+      }
+    }
+    debugger;
+    this.setState({ 
+      panels : currentPanels
+    });
   }
 
-  setMeasurement2 = (number) => {
+  setMeasurement2 = (event, number) => {
+    debugger;
     console.log("Measurement 2");
     console.log(number);
     // this.setState({ 
@@ -184,8 +195,8 @@ class App extends Component {
             setShopOrderNumber={this.setShopOrderNumber} 
             setZone={this.setZone} 
             setSize={this.setSize}
-            // setMeasurement1={props.setMeasurement1} 
-            // setMeasurement2={props.setMeasurement2}
+            setMeasurement1={this.setMeasurement1} 
+            setMeasurement2={this.setMeasurement2}
             />} />
 
             <Route exact path="/Process" component={Process} />
