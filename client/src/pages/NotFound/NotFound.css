@@ -1,0 +1,47 @@
+.mainErrorBox {
+    margin-top: 50px;
+}
+
+.containError {
+    margin: auto;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.goButton {
+    background-color: #f0bc5e;
+    border: none;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding-top: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    border-radius: 40px
+}
+
+.goButton:hover {
+    background-color: #ffe2ad;
+    border: none;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding-top: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+}
+
+.sorryText {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}

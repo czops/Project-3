@@ -7,6 +7,7 @@ import "../DataEntry2/DataEntry2.css";
 function DataEntryComponent2 (props) {
     return (
         <div className="formBox">
+            
             <Form>
             <Form.Text className="stepText">
                 STEP 3.
@@ -27,15 +28,21 @@ function DataEntryComponent2 (props) {
                             <Form.Label>Measurement 2</Form.Label>
                             <Form.Control onChange={(event) => props.setMeasurement2(event, panel.panelNumber)} value={panel.m2} placeholder="Enter #" className="measurement2"/>
                         </Form.Group>
+                    
                     </Form.Row>
-                </Form.Group>
-            </Form.Row>)}
-            <Button variant="primary" type="submit" className="submitButton">
-                SUBMIT
-            </Button>
-        </Form>
-    </div>
+                    </Form.Group>
+                    </Form.Row>
+                )}
+         
+                <div className="buttonBox">
+                    <Button variant="primary" type="submit" className="submitButton" block>
+                        SUBMIT
+                    </Button>
+                </div>
+
+            </Form>
+        </div>
     )
-};
+
 
 export default DataEntryComponent2;

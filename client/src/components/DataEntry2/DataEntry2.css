@@ -2,15 +2,7 @@
     background-color: #ffffff;
     border-radius: 5px;
     margin-top: 50px;
-}
-
-.selectRow1 {
-    background-color: #D3D3D3;
-    margin: auto;
-    padding-top: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 .measureBox {
@@ -25,10 +17,6 @@
 .secondMeasure {
     padding-left: 50px;
 }
-.checkboxes {
-    padding-right: 60px;
-}
-
 .circuitImage {
     width: 200px;
     height: auto;
@@ -56,22 +44,37 @@
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 40px;
-    margin: auto;
 }
 
+.buttonBox {
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
 .submitButton {
     background-color: #f0bc5e;
     border: none;
     color: #000000;
     font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 3px;
-    padding: 10px;
-    margin-top: 40px;
-    margin-left: 50px;
-    margin-bottom: 40px;
-    box-shadow: 2px 2px 2px rgb(169, 169, 169);
-    padding: 12px
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 40px;
+    margin-top: 50px;
+}
+
+.submitButton:hover {
+    background-color: #ffe9c0;
+    border: none;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 40px;
+    margin-top: 50px;
 }
 
 .savedInfo {
