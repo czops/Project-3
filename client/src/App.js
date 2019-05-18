@@ -64,21 +64,32 @@ class App extends Component {
       newPanels.push({
         panelNumber: i+1,
         shopOrderNumber: this.state.shopOrderNumber,
-        m1: 0,
-        m2: 0
+        modelNumber: this.state.modelNumber,
+        zone: this.state.zone,
+        size: this.state.size,
+        m1: "",
+        m2: ""
 
       })
     }
-    this.setState({
+    if (panelCount<20){
+      this.setState({
       panelsY: panelCount,
       panels: newPanels
     });
+    } else {
+      this.setState({
+        panelsY: 20,
+        panels: []
+      });
+    }
+    
     // this.setMasterState('panels', number);
   }
   
   setMeasurement1 = (event, number) => {
     debugger;
-    var value = event.target.value;
+    var value = parseInt(event.target.value);
     var name = event.target.name;
     console.log("Measurement 1");
     console.log(number);
