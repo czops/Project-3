@@ -19,10 +19,18 @@ class App extends Component {
   state = {
     loggedIn: false,
 
-    panels: [],
+    panels: [
+      // panelNumber: 1,
+      // shopOrderNumber: this.state.shopOrderNumber,
+      // m1: this.state.process1M1,
+      // m2: this.state.process1M2
+
+    ],
     panelsY: 0,
     process1M1: 0,
     process1M2: 0,
+    process2M1: 0,
+    process2M2: 0,
     shopOrderNumber: 0,
     modelNumber: "",
     size: "",
@@ -55,8 +63,10 @@ class App extends Component {
     for(let i = 0; i < panelCount; i++) {
       newPanels.push({
         panelNumber: i+1,
-        m1: "m1",
-        m2: "m2"
+        shopOrderNumber: this.state.shopOrderNumber,
+        m1: 0,
+        m2: 0
+
       })
     }
     this.setState({
@@ -64,6 +74,23 @@ class App extends Component {
       panels: newPanels
     });
     // this.setMasterState('panels', number);
+  }
+
+  
+  setMeasurement1 = (number) => {
+    console.log("Measurement 1");
+    console.log(number);
+    // this.setState({ 
+      // panels[number.target.].process1M1: number.target.value 
+    // });
+  }
+
+  setMeasurement2 = (number) => {
+    console.log("Measurement 2");
+    console.log(number);
+    // this.setState({ 
+    //   // panels[number].process1M2: number.target.value 
+    // });
   }
 
   setModelNumber = (number) => {
@@ -156,7 +183,11 @@ class App extends Component {
             setModelNumber={this.setModelNumber} 
             setShopOrderNumber={this.setShopOrderNumber} 
             setZone={this.setZone} 
-            setSize={this.setSize}/>} />
+            setSize={this.setSize}
+            // setMeasurement1={props.setMeasurement1} 
+            // setMeasurement2={props.setMeasurement2}
+            />} />
+
             <Route exact path="/Process" component={Process} />
             <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
             <Route exact path="/Process1" render={(state) => <Process1 masterState={this.state} setMasterState={this.setMasterState} process1CheckState={this.process1CheckState} handleInputChange={this.handleInputChange} PUTsomeStuff={this.PUTsomeStuff} />} />

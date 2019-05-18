@@ -24,15 +24,15 @@ function DataEntryComponent (props) {
                         <Form.Label>Zone Number</Form.Label>
                         <Form.Control as="select" onChange={props.setZone}>
                             <option>Choose...</option>
-                            <option>Zone 1</option>
-                            <option>Zone 2</option>
-                            <option>Zone 3</option>
-                            <option>Zone 4</option>
-                            <option>Zone 5</option>
-                            <option>Zone 6</option>
-                            <option>Zone 7</option>
-                            <option>Zone 8</option>
-                            <option>Zone 9</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
                         </Form.Control>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
