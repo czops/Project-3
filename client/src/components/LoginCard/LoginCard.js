@@ -23,13 +23,13 @@ function LoginComponent(props) {
                         <Form.Group className="inputFields">
                             <Form.Label>Enter Username</Form.Label>
                             <Form.Control type="name" placeholder="Username" name="userName"
-                                value={props.userName} onChange={(event) => props.onChange(event)}/>
+                                value={props.userName} onChange={(event) => props.onChange(event)} />
                             <Form.Label className="passwordEnter">Enter Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" name="password"
                                 value={props.password} onChange={(event) => props.onChange(event)} />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" className="loginButton float-right"
+                        <Button variant="primary" type="submit" className="loginButton" block
                             onClick={(event) => props.handleSubmit(event)}>
                             LOGIN
                     </Button>
