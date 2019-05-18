@@ -1,4 +1,4 @@
-import API from "../../utils/API"
+import authenticationAPI from "../../utils/authenticationAPI"
 import React, { Component } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import LoginComponent from "../../components/LoginCard/LoginCard";
@@ -18,22 +18,33 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            userName: "",
             password: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    };
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
 
-    handleSubmit() {
-        // event.preventDefault();
-        alert('A name was submitted: ' + this.state.value);
-    }
+    handleSubmit(event) {
+        event.preventDefault();
+        let userInfo = {
+            userName: this.state.userName,
+            password: this.state.password
+        }
+        console.log(userInfo)
+        authenticationAPI.login(userInfo)
+            .then(() => {
+                console.log("works")
+            })
+    };
 
 
 
@@ -43,7 +54,11 @@ class Login extends Component {
                 <Container>
                     <Row>
                         <Col>
-                            <LoginComponent />
+                            <LoginComponent
+                                onChange={this.handleChange}
+                                userName={this.state.userName}
+                                password={this.state.password}
+                                handleSubmit={this.handleSubmit} />
                         </Col>
                     </Row>
                 </Container>

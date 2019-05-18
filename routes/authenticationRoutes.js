@@ -10,7 +10,7 @@ const token = TokenGenerator.generate();
 module.exports = function (app) {
 
     // Route for login link
-    app.post("/login", function (req, res) {
+    app.get("/login", function (req, res) {
         db.User.findAll({
             where: { //SELECT * FROM db.User WHERE username = req.body.username AND password = req.body.password
                 username: req.body.usernameData,
