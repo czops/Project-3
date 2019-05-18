@@ -33,8 +33,6 @@
     font-size: 20px;
     letter-spacing: 4px;
     padding-top: 15px;
-    padding-right: 40px;
-    padding-left: 40px;
     padding-bottom: 15px;
     margin-top: 50px;
     border-radius: 40px
@@ -48,10 +46,9 @@
     font-size: 20px;
     letter-spacing: 4px;
     padding-top: 15px;
-    padding-right: 40px;
-    padding-left: 40px;
     padding-bottom: 15px;
     margin-top: 50px;
+    border-radius: 40px;
 }
 
 .containBox {
