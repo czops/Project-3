@@ -7,8 +7,6 @@ import DataEntryComponent2 from "../../components/DataEntry2/DataEntry2";
 import EnterDataComponent from "../../components/EnterDataCard/EnterDataCard";
 import NavBar from "../../components/navbar/Navbar";
 import React from "react";
-import TokenGenerator from "../../../../client/node_modules/token-generator";
-
 
 var backgroundStyle = {
     backgroundImage: `url(${connectImage})`,
@@ -35,9 +33,17 @@ function Landing(props) {
             <Container>
                 <Row>
                     <Col>
-                        <DataEntryComponent setModelNumber={props.setModelNumber} setShopOrderNumber={props.setShopOrderNumber} setZone={props.setZone} setSize={props.setSize}/>
-                        <EnterDataComponent panel={props.masterState.panel} setPanelNumber={props.setPanelNumber}/>
-                        <DataEntryComponent2 panels={props.masterState.panels} setMeasurement1={props.setMeasurement1} setMeasurement2={props.setMeasurement2}/>
+                        <DataEntryComponent
+                            setModelNumber={props.setModelNumber}
+                            setShopOrderNumber={props.setShopOrderNumber}
+                            setZone={props.setZone} setSize={props.setSize} />
+                        <EnterDataComponent
+                            panel={props.masterState.panel}
+                            setPanelNumber={props.setPanelNumber} />
+                        <DataEntryComponent2
+                            panels={props.masterState.panels}
+                            setMeasurement1={props.setMeasurement1}
+                            setMeasurement2={props.setMeasurement2} />
                     </Col>
                 </Row>
             </Container>

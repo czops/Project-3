@@ -48,4 +48,8 @@ export default {
         return axios.put("/api/processOne", processTwo);
     },
 
+    multiplePanels: function (Panels) {
+        return axios.post("/api/multiplePanels", Panels)
+    }
+
 };

@@ -22,11 +22,15 @@ function DataEntryComponent2(props) {
                             <Form.Row>
                                 <Form.Group>
                                     <Form.Label>Measurement 1</Form.Label>
-                                    <Form.Control onChange={(event) => props.setMeasurement1(event, panel.panelNumber)} value={panel.m1} placeholder="Enter #" className="measurement1" />
+                                    <Form.Control
+                                        onChange={(event) => props.setMeasurement1(event, panel.panelNumber)}
+                                        value={panel.m1} placeholder="Enter #" className="measurement1" />
                                 </Form.Group>
                                 <Form.Group className="secondMeasure">
                                     <Form.Label>Measurement 2</Form.Label>
-                                    <Form.Control onChange={(event) => props.setMeasurement2(event, panel.panelNumber)} value={panel.m2} placeholder="Enter #" className="measurement2" />
+                                    <Form.Control
+                                        onChange={(event) => props.setMeasurement2(event, panel.panelNumber)}
+                                        value={panel.m2} placeholder="Enter #" className="measurement2" />
                                 </Form.Group>
 
                             </Form.Row>
@@ -35,7 +39,7 @@ function DataEntryComponent2(props) {
                 )}
 
                 <div className="buttonBox">
-                    <Button variant="primary" type="submit" className="submitButton" block>
+                    <Button variant="primary" type="submit" className="submitButton" block> 
                         SUBMIT
                     </Button>
                 </div>

@@ -59,6 +59,15 @@ module.exports = function (app) {
         })
     })
 
+    app.post("/api/multiplePanels", (req, res) => { //req.body has to be an array
+        console.log(req);
+        db.Panel.bulkCreate(
+            req.body
+        ).then((res) => {
+            console.log(res)
+        })
+    })
+
     app.post("/api/newPuck", (req, res) => { //create a new puck and add shopOrder association
         db.Puck.create({
             shopOrder: req.body.shopOrder
