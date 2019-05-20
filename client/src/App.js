@@ -1,17 +1,16 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import AppIntro from "./components/AppIntro";
+// import AppIntro from "./components/AppIntro";
+import API from "./utils/API";
 import Login from "./pages/Login/Login";
 import Landing from "./pages/LandingPage/Landing";
-import Process from "./pages/Process/Process";
 import Measurements from "./pages/Measurements/Measurements"
 import NotFound from "./pages/NotFound/NotFound";
+import Process from "./pages/Process/Process";
 import Process1 from "./pages/Process1/Process1"
 import Process2 from "./pages/Process2/Process2"
 import React, { Component } from "react";
 import Success from "./pages/Success/Success"
 
-import API from "./utils/API";
 
 class App extends Component {
   // return <AppIntro />;

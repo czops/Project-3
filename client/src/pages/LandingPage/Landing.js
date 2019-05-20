@@ -16,9 +16,9 @@ var backgroundStyle = {
 }
 
 function Landing(props) {
-    console.log(props);
-    console.log(props.masterState.panel);
-    console.log(props.setPanelNumber);
+    // console.log(props);
+    // console.log(props.masterState.panel);
+    // console.log(props.setPanelNumber);
 
     var token = localStorage.getItem("token");
     if (token === undefined || token === null) {

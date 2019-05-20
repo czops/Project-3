@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Container, Form } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import Navbar from "../../components/navbar/Navbar";
 import connectImage from "../LandingPage/connectwork.png";
 import DataEntryComponent2 from "../../components/DataEntry2/DataEntry2";
