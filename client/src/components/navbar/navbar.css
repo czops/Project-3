@@ -1,3 +1,8 @@
 .navbar {
     background-color: #f0bc5e;
 }
+
+.logoutLink {
+    letter-spacing: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
