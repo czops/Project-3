@@ -9,6 +9,7 @@ import Process from "./pages/Process/Process";
 import Process1 from "./pages/Process1/Process1"
 import Process2 from "./pages/Process2/Process2"
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom"
 import Success from "./pages/Success/Success"
 
 
@@ -126,14 +127,14 @@ class App extends Component {
   }
 
   setModelNumber = (number) => {
-    console.log("Model number");
-    console.log(number);
+    // console.log("Model number");
+    // console.log(number);
     this.setState({ modelNumber: number.target.value });
   }
 
   setShopOrderNumber = (number) => {
-    console.log("Shop order number");
-    console.log(number);
+    // console.log("Shop order number");
+    // console.log(number);
     this.setState({ shopOrderNumber: number.target.value });
   }
 
@@ -185,11 +186,15 @@ class App extends Component {
   };
 
   PUTsomeStuff = (event) => { //function that call api to add Panels [Array] to db
+    debugger;
     event.preventDefault()
     let Panels = this.state.panels
     API.multiplePanels(Panels)
       .then((res) => {
         console.log(res)
+      })
+      .then(() => {
+        return <Redirect to="/Success" />
       })
   };
 
@@ -214,9 +219,15 @@ class App extends Component {
             />} />
 
             <Route exact path="/Process" component={Process} />
-            <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state} setMasterState={this.setMasterState} />} />
-            <Route exact path="/Process1" render={(state) => <Process1 masterState={this.state} setMasterState={this.setMasterState} process1CheckState={this.process1CheckState} handleInputChange={this.handleInputChange} PUTsomeStuff={this.PUTsomeStuff} />} />
-            <Route exact path="/Process2" render={(state) => <Process2 masterState={this.state} setMasterState={this.setMasterState} />} />
+            <Route exact path="/Measurements" render={(state) => <Measurements masterState={this.state}
+              setMasterState={this.setMasterState} />} />
+            <Route exact path="/Process1" render={(state) => <Process1 masterState={this.state}
+              setMasterState={this.setMasterState}
+              process1CheckState={this.process1CheckState}
+              handleInputChange={this.handleInputChange}
+              PUTsomeStuff={this.PUTsomeStuff} />} />
+            <Route exact path="/Process2" render={(state) => <Process2 masterState={this.state}
+              setMasterState={this.setMasterState} />} />
             <Route exact path="/Success" component={Success} />
             <Route component={NotFound} />
           </Switch>
