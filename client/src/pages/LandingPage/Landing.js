@@ -43,7 +43,8 @@ function Landing(props) {
                         <DataEntryComponent2
                             panels={props.masterState.panels}
                             setMeasurement1={props.setMeasurement1}
-                            setMeasurement2={props.setMeasurement2} />
+                            setMeasurement2={props.setMeasurement2}
+                            PUTsomeStuff={props.PUTsomeStuff} />
                     </Col>
                 </Row>
             </Container>

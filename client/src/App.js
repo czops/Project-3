@@ -186,7 +186,6 @@ class App extends Component {
   };
 
   PUTsomeStuff = (event) => { //function that call api to add Panels [Array] to db
-    debugger;
     event.preventDefault()
     let Panels = this.state.panels
     API.multiplePanels(Panels)
@@ -218,6 +217,7 @@ class App extends Component {
               setSize={this.setSize}
               setMeasurement1={this.setMeasurement1}
               setMeasurement2={this.setMeasurement2}
+              PUTsomeStuff={this.PUTsomeStuff}
             />} />
 
             <Route exact path="/Process" component={Process} />

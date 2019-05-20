@@ -39,7 +39,8 @@ function DataEntryComponent2(props) {
                 )}
 
                 <div className="buttonBox">
-                    <Button variant="primary" type="submit" className="submitButton" block> 
+                    <Button variant="primary" type="submit" className="submitButton" block
+                        onClick={(event) => props.PUTsomeStuff(event)}>
                         SUBMIT
                     </Button>
                 </div>
