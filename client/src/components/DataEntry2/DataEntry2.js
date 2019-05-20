@@ -43,6 +43,6 @@ function DataEntryComponent2 (props) {
             </Form>
         </div>
     )
-
+            }
 
 export default DataEntryComponent2;
