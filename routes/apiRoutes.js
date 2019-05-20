@@ -60,7 +60,7 @@ module.exports = function (app) {
     })
 
     app.post("/api/multiplePanels", (req, res) => { //req.body has to be an array
-        console.log(req);
+        console.log(req.body);
         db.Panel.bulkCreate(
             req.body
         ).then((res) => {
