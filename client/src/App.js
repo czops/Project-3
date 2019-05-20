@@ -196,6 +196,8 @@ class App extends Component {
       .then(() => {
         return <Redirect to="/Success" />
       })
+
+    // http://docs.sequelizejs.com/manual/instances.html#working-in-bulk--creating--updating-and-destroying-multiple-rows-at-once-
   };
 
   render() {
