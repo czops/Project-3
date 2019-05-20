@@ -13,50 +13,25 @@ var backgroundStyle = {
 
 class Measurements extends Component {
 
-    // state = {
-    //     // loggedIn: false
-    //     process1M1: "",2
-    //     process2M2: ""
-    // }
-
     render() {
         return (
             <div style={backgroundStyle}>
-            <Navbar />
-            <Container>
-                <Row>
-                    <Col>
-                        <DataEntryComponent2 />
-                    </Col>
-                </Row>
-            </Container>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+                <Navbar />
+                <Container>
+                    <Row>
+                        <Col>
+                            <DataEntryComponent2 />
+                        </Col>
+                    </Row>
+                </Container>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         )
     }
-    //     return (
-    //         <div>
-    //         <Navbar />
-    //         <Container>
-
-    //             <Row>
-    //                 <Col>
-    //                     <h1>Measurements</h1>
-    //                     { JSON.stringify( this.props.masterState )}
-    //                     <button onClick={() => {
-    //                         this.props.setMasterState( 'measurement', true );
-    //                     }}>test</button>
-    //                 </Col>
-
-    //             </Row>
-    //         </Container>
-    //         </div>
-    //     )
-    // }
 };
 
 export default Measurements;

@@ -9,11 +9,8 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        panelSizeX: {
-            type: DataTypes.INTEGER
-        },
-        panelSizeY: {
-            type: DataTypes.INTEGER
+        panelSize: {
+            type: DataTypes.STRING
         },
         process1M1: {
             type: DataTypes.FLOAT
@@ -21,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
         process1M2: {
             type: DataTypes.FLOAT
         },
-        process1Zone: {
+        Zone: {
             type: DataTypes.INTEGER
         },
         process1PuckNum: {
@@ -33,9 +30,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         process2M2: {
             type: DataTypes.FLOAT
-        },
-        process2Zone: {
-            type: DataTypes.INTEGER
         },
         process2PuckNum: {
             type: DataTypes.INTEGER,

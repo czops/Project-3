@@ -11,10 +11,11 @@ module.exports = function (app) {
 
     // Route for login link
     app.post("/login", function (req, res) {
+        console.log(req.body)
         db.User.findAll({
             where: { //SELECT * FROM db.User WHERE username = req.body.username AND password = req.body.password
-                username: req.body.usernameData,
-                password: req.body.passwordData
+                username: req.body.username,
+                password: req.body.password
             },
             raw: true,
         }).then(function (userInfo) {
@@ -22,7 +23,7 @@ module.exports = function (app) {
                 res.json({ userName: undefined });
             }
             else {
-                console.log(userInfo[0], token);
+                // console.log(userInfo[0].username, token);
                 var loggedUser = {//Create an object of properties to return to client 
                     "userName": userInfo[0].username,
                     "token": token
