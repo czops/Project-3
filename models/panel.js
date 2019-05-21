@@ -3,11 +3,19 @@ module.exports = function (sequelize, DataTypes) {
     const Panel = sequelize.define("Panel", {
         shopOrderNumber: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                min: 3,                  // only allow values >= 3
+            }
         },
         modelNumber: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notEmpty: true,
+                min: 3,                  // only allow values >= 3
+            }
         },
         panelSize: {
             type: DataTypes.STRING
