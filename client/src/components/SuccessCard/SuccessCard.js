@@ -11,7 +11,6 @@ class SuccessComponent extends Component {
     
     routeToLanding = (event) => {
         this.props.history.push('/Landing');
-        this.props
     }
 
 
