@@ -88,7 +88,9 @@ class App extends Component {
   }
   
   setMeasurement1 = (event, number) => {
-    debugger;
+    //debugger;
+
+    if (event.target.value) {
     var value = parseInt(event.target.value);
     var name = event.target.name;
     console.log("Measurement 1");
@@ -101,20 +103,75 @@ class App extends Component {
         break;
       }
     }
-    debugger;
+    //debugger;
+    this.setState({ 
+      panels : currentPanels
+    });
+  } else {
+    var value = 0;
+    var name = event.target.name;
+    console.log("Measurement 1");
+    console.log(number);
+    console.log(name);
+    var currentPanels = this.state.panels;
+    for(var i = 0; i < currentPanels.length; i++) {
+      if (currentPanels[i].panelNumber === number) {
+        currentPanels[i].m1 = value;
+        break;
+      };
+    }
+    //debugger;
     this.setState({ 
       panels : currentPanels
     });
   }
+  }
 
   setMeasurement2 = (event, number) => {
-    debugger;
+
+    //this logic prevents NaN from occurring
+    if (event.target.value) {
+    var value = parseInt(event.target.value);
+    var name = event.target.name;
     console.log("Measurement 2");
     console.log(number);
+    console.log(name);
+    var currentPanels = this.state.panels;
+    for(var i = 0; i < currentPanels.length; i++) {
+      if (currentPanels[i].panelNumber === number) {
+        currentPanels[i].m2 = value;
+        break;
+      };
+    }
+
+    this.setState({ 
+      panels : currentPanels
+    });
     // this.setState({ 
     //   // panels[number].process1M2: number.target.value 
     // });
+  } else {
+    var value = 0;
+    var name = event.target.name;
+    console.log("Measurement 2");
+    console.log(number);
+    console.log(name);
+    var currentPanels = this.state.panels;
+    for(var i = 0; i < currentPanels.length; i++) {
+      if (currentPanels[i].panelNumber === number) {
+        currentPanels[i].m2 = value;
+        break;
+      };
+    }
+    //debugger;
+    this.setState({ 
+      panels : currentPanels
+    });
   }
+}
+
+
+
 
   setModelNumber = (number) => {
     console.log("Model number");
