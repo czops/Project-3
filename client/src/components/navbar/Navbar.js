@@ -15,9 +15,9 @@ function NavbarComponent() {
                     alt="Circuit Ninjas"
                 />
             </Navbar.Brand>
-                <Navbar.Text className="logoutLink" pullRight>
-                    <a href="/"> | LOGOUT</a>
-                </Navbar.Text>
+            <Navbar.Text className="logoutLink">
+                <a href="/"> | LOGOUT</a>
+            </Navbar.Text>
         </Navbar>
     )
 };

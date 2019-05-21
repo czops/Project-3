@@ -9,8 +9,7 @@ import Process from "./pages/Process/Process";
 import Process1 from "./pages/Process1/Process1"
 import Process2 from "./pages/Process2/Process2"
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom"
-import Success from "./pages/Success/Success"
+import Success from "./pages/Success/Success";
 
 
 class App extends Component {
@@ -19,6 +18,8 @@ class App extends Component {
   state = {
     loggedIn: false,
 
+    success: false,
+
     panels: [
       // panelNumber: 1,
       // shopOrderNumber: this.state.shopOrderNumber,
@@ -26,10 +27,10 @@ class App extends Component {
       // m2: this.state.process1M2
     ],
     panelsY: 0,
-    process1M1: 0,
-    process1M2: 0,
-    process2M1: 0,
-    process2M2: 0,
+    // process1M1: 0,
+    // process1M2: 0,
+    // process2M1: 0,
+    // process2M2: 0,
     shopOrderNumber: 0,
     modelNumber: "",
     size: "",
@@ -187,27 +188,32 @@ class App extends Component {
 
   PUTsomeStuff = (event) => { //function that call api to add Panels [Array] to db
     event.preventDefault()
+
+    debugger;
+    console.log(this.props);
+    console.log(this.props.history);
     let Panels = this.state.panels
     API.multiplePanels(Panels)
       .then((res) => {
-        console.log(res)
+        if (res.status === 200) {
+          this.setState({
+            success: true
+          })
+        }
       })
-      .then(() => {
-        return <Redirect to="/Success" />
-      })
-
     // http://docs.sequelizejs.com/manual/instances.html#working-in-bulk--creating--updating-and-destroying-multiple-rows-at-once-
   };
 
   render() {
-    return (
 
+    return (
       <Router>
         <div>
           <Switch>
             <Route exact path="/" component={Login} />
             {/* <Route exact path="/LandingPage" render={(state) => <LandingPage {...state}/>} /> */}
-            <Route exact path="/Landing" render={(state) => <Landing
+            <Route exact path="/Landing" render={(routerProps) => <Landing
+              {...routerProps}
               masterState={this.state}
               setMasterState={this.setMasterState}
               setPanelNumber={this.setPanelNumber}

@@ -44,6 +44,7 @@ function Landing(props) {
                             panels={props.masterState.panels}
                             setMeasurement1={props.setMeasurement1}
                             setMeasurement2={props.setMeasurement2}
+                            history={props.history}
                             PUTsomeStuff={props.PUTsomeStuff} />
                     </Col>
                 </Row>
