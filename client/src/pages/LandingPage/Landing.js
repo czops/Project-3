@@ -16,9 +16,9 @@ var backgroundStyle = {
 }
 
 function Landing(props) {
-    console.log(props);
-    console.log(props.masterState.panel);
-    console.log(props.setPanelNumber);
+    // console.log(props);
+    // console.log(props.masterState.panel);
+    // console.log(props.setPanelNumber);
 
     var token = localStorage.getItem("token");
     if (token === undefined || token === null) {
@@ -43,7 +43,9 @@ function Landing(props) {
                         <DataEntryComponent2
                             panels={props.masterState.panels}
                             setMeasurement1={props.setMeasurement1}
-                            setMeasurement2={props.setMeasurement2} />
+                            setMeasurement2={props.setMeasurement2}
+                            history={props.history}
+                            PUTsomeStuff={props.PUTsomeStuff} />
                     </Col>
                 </Row>
             </Container>

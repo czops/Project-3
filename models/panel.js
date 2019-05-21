@@ -1,24 +1,24 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Panel = sequelize.define("Panel", {
-        shopOrder: {
+        shopOrderNumber: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        modelNum: {
+        modelNumber: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         panelSize: {
             type: DataTypes.STRING
         },
-        process1M1: {
+        m1: {
             type: DataTypes.FLOAT
         },
-        process1M2: {
+        m2: {
             type: DataTypes.FLOAT
         },
-        Zone: {
+        zone: {
             type: DataTypes.INTEGER
         },
         process1PuckNum: {
