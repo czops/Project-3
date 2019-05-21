@@ -17,16 +17,16 @@ var backgroundStyle = {
 }
 
 function Landing(props) {
-    // console.log(props);
-    // console.log(props.masterState.panel);
-    // console.log(props.setPanelNumber);
+    console.log(props);
+    console.log(props.masterState.panel);
+    console.log(props.setPanelNumber);
 
-    // var token = localStorage.getItem("token");
-    // if (token === undefined || token === null) {
-    //     return (
-    //         <Redirect to="/" />
-    //     );
-    // }
+    var token = localStorage.getItem("token");
+    if (token === undefined || token === null) {
+        return (
+            <Redirect to="/" />
+        );
+    }
 
     return (
         <div style={backgroundStyle}>

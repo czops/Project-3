@@ -4,11 +4,6 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import "../DataEntry1/DataEntry.css";
 
-var ImageHolder1 = "./images/image_12x18.svg"
-var ImageHolder2 = "./images/image_12x24.svg"
-var ImageHolder3 = "./images/image_12x36.svg" 
-var ImageHolder4 = "./images/image_18x24.svg" 
-
 function DataEntryComponent (props) {
     return (
         <div className="formBox">
@@ -21,7 +16,7 @@ function DataEntryComponent (props) {
                 
         
                     <Form.Group>
-                        <Image src={ImageHolder1} rounded className="circuitImage" />
+                        <Image src="./images/image_12x18.svg" rounded className="circuitImage" />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formPanelSize" className="panelDrop">
