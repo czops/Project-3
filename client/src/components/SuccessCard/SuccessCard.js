@@ -11,6 +11,7 @@ class SuccessComponent extends Component {
     
     routeToLanding = (event) => {
         this.props.history.push('/Landing');
+        this.props
     }
 
 
@@ -22,7 +23,7 @@ class SuccessComponent extends Component {
                     <Card.Title className="cardTitle"> Data Entered Successfully!</Card.Title>
                     <SuccessAnimation />
                     <Card.Body className="cardMessage">The <strong>puck #</strong> associated with this entry is: <span controlId="puckGenerated">#</span></Card.Body>
-                    <Button onClick={(event) => this.routeToLanding(event)} variant="primary" type="submit" className="homeButton float-right">HOME</Button>
+                    <Button onClick={(event) => this.routeToLanding(event)} variant="primary" type="submit" className="homeButton float-right">ENTER MORE DATA</Button>
                 </Card>
             </div>
         )

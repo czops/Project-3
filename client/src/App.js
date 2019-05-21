@@ -283,6 +283,7 @@ class App extends Component {
             <Route exact path="/Process2" render={(state) => <Process2 masterState={this.state}
               setMasterState={this.setMasterState} />} />
             <Route exact path="/Success" render={(routerProps) => <Success 
+            masterState={this.state}
             {...routerProps} 
             // component={Success}
             />} />
