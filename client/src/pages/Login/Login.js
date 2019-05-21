@@ -62,7 +62,7 @@ class Login extends Component {
             return <Redirect to="/Landing" />
         }
         return (
-            <div style={backgroundStyle}>
+            <div style={backgroundStyle} className="main">
                 <Container>
                     <Row>
                         <Col>
@@ -73,6 +73,11 @@ class Login extends Component {
                                 handleSubmit={this.handleSubmit} />
                         </Col>
                     </Row>
+                </Container>
+                <Container>
+                    <div className="yellowStripe">
+                        CREATED BY TEAM NINJA DRAGON | CODING BOOTCAMP | 2019
+                    </div>
                 </Container>
             </div>
         )

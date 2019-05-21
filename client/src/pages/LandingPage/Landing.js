@@ -29,7 +29,7 @@ function Landing(props) {
     }
 
     return (
-        <div style={backgroundStyle}>
+        <div style={backgroundStyle} className="main">
             <NavBar />
             <Container>
                 <Row>
