@@ -63,6 +63,7 @@ module.exports = function (app) {
         db.Panel.bulkCreate(
             req.body
         ).then((data) => {
+            console.log(data)
             res.json(data)
         })
     })

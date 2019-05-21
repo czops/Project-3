@@ -25,16 +25,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             unique: true,
         },
-        process2M1: {
-            type: DataTypes.FLOAT
-        },
-        process2M2: {
-            type: DataTypes.FLOAT
-        },
-        process2PuckNum: {
-            type: DataTypes.INTEGER,
-            unique: true,
-        },
         panelNumberX: {
             type: DataTypes.INTEGER
         },
