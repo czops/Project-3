@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import "../DataEntry2/DataEntry2.css";
 
 function DataEntryComponent2(props) {
+    // if (this.state. === true) {
+    //     return <Redirect to="/Success" />
+    // }
     return (
         <div className="formBox">
 
