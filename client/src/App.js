@@ -282,7 +282,10 @@ class App extends Component {
               PUTsomeStuff={this.PUTsomeStuff} />} />
             <Route exact path="/Process2" render={(state) => <Process2 masterState={this.state}
               setMasterState={this.setMasterState} />} />
-            <Route exact path="/Success" component={Success} />
+            <Route exact path="/Success" render={(routerProps) => <Success 
+            {...routerProps} 
+            // component={Success}
+            />} />
             <Route component={NotFound} />
           </Switch>
         </div>
