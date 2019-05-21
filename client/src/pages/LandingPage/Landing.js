@@ -7,6 +7,7 @@ import DataEntryComponent2 from "../../components/DataEntry2/DataEntry2";
 import EnterDataComponent from "../../components/EnterDataCard/EnterDataCard";
 import NavBar from "../../components/navbar/Navbar";
 import React from "react";
+import {ToastsContainer, ToastsStore} from 'react-toasts';
 
 var backgroundStyle = {
     backgroundImage: `url(${connectImage})`,
@@ -20,12 +21,12 @@ function Landing(props) {
     console.log(props.masterState.panel);
     console.log(props.setPanelNumber);
 
-    var token = localStorage.getItem("token");
-    if (token === undefined || token === null) {
-        return (
-            <Redirect to="/" />
-        );
-    }
+    // var token = localStorage.getItem("token");
+    // if (token === undefined || token === null) {
+    //     return (
+    //         <Redirect to="/" />
+    //     );
+    // }
 
     return (
         <div style={backgroundStyle}>
@@ -47,6 +48,10 @@ function Landing(props) {
                     </Col>
                 </Row>
             </Container>
+            <div>
+                <button onClick={() => ToastsStore.error("ERROR: Data not saved! Sorry, chum.")}>Click me</button>
+                <ToastsContainer store={ToastsStore} />
+            </div>
         </div>
     )
 };
