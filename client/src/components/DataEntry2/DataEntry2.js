@@ -21,9 +21,9 @@ class DataEntryComponent2 extends Component {
         API.multiplePanels(Panels)
             .then((res) => {
                 console.log(res)
-                // if (res.status === 200) {
-                //     this.props.history.push('/Success');
-                // }
+                if (res.status === 200) {
+                    this.props.history.push('/Success');
+                }
             })
         // http://docs.sequelizejs.com/manual/instances.html#working-in-bulk--creating--updating-and-destroying-multiple-rows-at-once-
     };
