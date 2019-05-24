@@ -1,12 +1,19 @@
 # Project 3: Circuit Ninjas Database
 
 ## MVP
-Based on a real world need, this app is a streamlined and efficient way to enter data, have it sent to the database for storage, using React.
-
 ![MVP](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide2.jpeg)
 
+## Technology
+![Technology](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide11.jpeg)
 
+## Group Roles
+![Technology](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide12.jpeg)
 
+## Deployed App
+
+Link: http://www.circuitninjas.com/
+
+-- BOILER PLATE REACT --
 
 # Create React Express App
 
