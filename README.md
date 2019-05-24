@@ -3,7 +3,7 @@
 ## MVP
 Based on a real world need, this app is a streamlined and efficient way to enter data, have it sent to the database for storage, using React.
 
-
+![MVP](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide2.jpeg)
 
 
 
