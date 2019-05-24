@@ -1,3 +1,13 @@
+# Project 3: Circuit Ninjas Database
+
+## MVP
+Based on a real world need, this app is a streamlined and efficient way to enter data, have it sent to the database for storage, using React.
+
+
+
+
+
+
 # Create React Express App
 
 
