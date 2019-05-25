@@ -1,3 +1,20 @@
+# Project 3: Circuit Ninjas Database
+
+## MVP
+![MVP](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide2.jpeg)
+
+## Technology
+![Technology](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide11.jpeg)
+
+## Group Roles
+![Technology](https://github.com/czops/Project-3/blob/master/CircuitNinjas_Presentation/Slide12.jpeg)
+
+## Deployed App
+
+Link: http://www.circuitninjas.com/
+
+-- BOILER PLATE REACT --
+
 # Create React Express App
 
 
