@@ -8,6 +8,7 @@ import "../LoginCard/LoginCard.css";
 function LoginComponent(props) {
 
     return (
+        <div>
         <Container className="containBox">
             <Row>
                 <Col className="loginBox">
@@ -36,6 +37,7 @@ function LoginComponent(props) {
                 </Col>
             </Row>
         </Container>
+        </div>
     )
 };
 
