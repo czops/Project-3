@@ -29,7 +29,7 @@
     "react-bootstrap": "^1.0.0-beta.8",
     "react-lottie": "^1.2.3",
     "react-toasts": "^3.0.3",
-    "sequelize": "^5.8.4",
+    "sequelize": "^5.15.1",
     "token-generator": "^1.0.0"
   }
 }
